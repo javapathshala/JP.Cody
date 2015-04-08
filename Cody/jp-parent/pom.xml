@@ -1,0 +1,40 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.jp.wisdom</groupId>
+	<artifactId>jp-parent</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>pom</packaging>
+	<name>Java Pathshala Parent POM</name>
+	<description>An inheritable project definition for all Java Pathshala Projects built</description>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<targetJdk>1.8</targetJdk>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
+	</properties>
+
+	<url>www.javapathshala.com</url>
+	<organization>
+		<name>Java Pathshala</name>
+		<url>www.javapathshala.com</url>
+	</organization>
+	<inceptionYear>2014</inceptionYear>
+	<mailingLists>
+		<mailingList>
+			<name>Java Pathshala</name>
+			<post>java.pathshala@gmail.com</post>
+		</mailingList>
+	</mailingLists>
+	<licenses>
+		<license>
+			<name>Copyright (c) Java Pathshala. All rights reserved.</name>
+			<comments>No parts of this source code can be reproduced without written consent from Java Pathshala.</comments>
+		</license>
+	</licenses>
+	<scm>
+		<url>https://github.com/javapathshala/JP.Cody</url>
+		<developerConnection>https://github.com/javapathshala/JP.Cody</developerConnection>
+	</scm>
+</project>
