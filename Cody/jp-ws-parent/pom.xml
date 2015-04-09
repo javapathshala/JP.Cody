@@ -5,10 +5,10 @@
     <artifactId>jp-parent</artifactId>
     <version>0.0.1-SNAPSHOT</version>
   </parent>
-  <groupId>com.jp.wisdom.web</groupId>
-  <artifactId>jp-web-parent</artifactId>
+  <groupId>com.jp.wisdom.ws</groupId>
+  <artifactId>jp-ws-parent</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
   <packaging>pom</packaging>
-  <name>Web Parent POM</name>
-  <description>Web Parent POM</description>
-  <url>www.javapathshala.com</url>
+  <name>WebService Parent POM</name>
+  <description>WebService Parent POM</description>
 </project>
