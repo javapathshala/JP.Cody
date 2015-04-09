@@ -10,4 +10,5 @@
   <packaging>pom</packaging>
   <name>Web Parent POM</name>
   <description>Web Parent POM</description>
+  <url>www.javapathshala.com</url>
 </project>
