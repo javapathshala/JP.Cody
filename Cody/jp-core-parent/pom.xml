@@ -10,4 +10,7 @@
   <packaging>pom</packaging>
   <name>Core Apps Parent POM</name>
   <description>Core Apps Parent POM</description>
+  <modules>
+  	<module>jp-core</module>
+  </modules>
 </project>
