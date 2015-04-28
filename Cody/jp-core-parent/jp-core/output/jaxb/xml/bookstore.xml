@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns2:bookStore xmlns:ns2="com.jp.bookStore">
+    <storeName>Surya Bookstore</storeName>
+    <location>Frankfurt Airport</location>
+    <bookStoreType bookType="Sports">Cricket</bookStoreType>
+    <bookList>
+        <book>
+            <author>Dimit-1</author>
+            <bookName>The Game-1</bookName>
+            <publisher>Surya-1</publisher>
+            <isbn>978-12</isbn>
+        </book>
+        <book>
+            <author>Dimit-2</author>
+            <bookName>The Game-2</bookName>
+            <publisher>Surya-2</publisher>
+            <isbn>978-22</isbn>
+        </book>
+        <book>
+            <author>Dimit-3</author>
+            <bookName>The Game-3</bookName>
+            <publisher>Surya-3</publisher>
+            <isbn>978-32</isbn>
+        </book>
+    </bookList>
+</ns2:bookStore>
