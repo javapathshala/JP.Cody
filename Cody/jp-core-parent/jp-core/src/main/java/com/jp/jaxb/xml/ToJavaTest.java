@@ -17,6 +17,8 @@ import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Unmarshaller;
 
+import com.jp.jaxb.BookStore;
+
 /**
  * @author Dimit Chadha
  */

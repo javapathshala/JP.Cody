@@ -8,7 +8,7 @@
  * obtain retention orders and to prosecute the authors of any infraction. Visit
  * us at www.javapathshala.com
  */
-package com.jp.jaxb.xml;
+package com.jp.jaxb;
 
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;

@@ -19,6 +19,10 @@ import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
 
+import com.jp.jaxb.Book;
+import com.jp.jaxb.BookStore;
+import com.jp.jaxb.BookStoreType;
+
 /**
  * @author Dimit Chadha
  */
