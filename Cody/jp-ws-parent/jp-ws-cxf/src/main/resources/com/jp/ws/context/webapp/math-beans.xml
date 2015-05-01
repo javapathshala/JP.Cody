@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+	<bean class="com.jp.math.impl.one.MathServiceImplOne" id="inquiryDelegate" />
+	<bean class="com.jp.math.impl.one.MathServiceImplOne" id="storageDelegate" />
+	<bean class="com.jp.ws.EnterpriseMathService" id="mathService">
+		<property name="inquiryDelegate" ref="inquiryDelegate" />
+		<property name="storageDelegate" ref="storageDelegate" />
+	</bean>
+
+</beans>
