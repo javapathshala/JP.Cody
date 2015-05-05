@@ -19,12 +19,13 @@ import javax.jws.WebService;
 import com.jp.ws.api.InquiryService;
 import com.jp.ws.api.MathService;
 import com.jp.ws.api.StorageService;
+import com.jp.ws.api.response.MathResponse;
 
 /**
  * @author Dimit Chadha
  */
 @WebService(serviceName = "MathService", portName = "MathPort", name = "MathEndPoint", targetNamespace = "http://jp.com/math/ws")
-//http://localhost:8080/jp-ws-cxf/svc/ws/Math?wsdl
+// http://localhost:8080/jp-ws-cxf/svc/ws/Math?wsdl
 public class EnterpriseMathService implements MathService {
 
 	private InquiryService inquiryDelegate;
@@ -52,12 +53,12 @@ public class EnterpriseMathService implements MathService {
 	// Inquiry Methods
 
 	@Override
-	public int summation(@WebParam(name = "numberList") List<Integer> numbers) {
+	public MathResponse summation(@WebParam(name = "numberList") List<Integer> numbers) {
 		return inquiryDelegate.summation(numbers);
 	}
 
 	@Override
-	public int multiple(List<Integer> numbers) {
+	public MathResponse multiple(List<Integer> numbers) {
 		return storageDelegate.multiple(numbers);
 	}
 

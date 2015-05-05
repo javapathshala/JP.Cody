@@ -13,6 +13,9 @@ package com.jp.math.impl.one;
 import java.util.List;
 
 import com.jp.ws.api.MathService;
+import com.jp.ws.api.response.MathResponse;
+import com.jp.ws.api.response.ResponseReason;
+import com.jp.ws.api.response.ResponseStatus;
 
 /**
  * @author Dimit Chadha
@@ -20,21 +23,21 @@ import com.jp.ws.api.MathService;
 public class MathServiceImplOne implements MathService {
 
 	@Override
-	public int summation(List<Integer> numbers) {
+	public MathResponse summation(List<Integer> numbers) {
 		int sum = 0;
 		for (Integer num : numbers) {
 			sum += num;
 		}
-		return sum;
+		return new MathResponse(ResponseStatus.SUCCESS, ResponseReason.OK, sum);
 	}
 
 	@Override
-	public int multiple(List<Integer> numbers) {
+	public MathResponse multiple(List<Integer> numbers) {
 		int mul = 1;
 		for (Integer num : numbers) {
 			mul *= num;
 		}
-		return mul;
+		return new MathResponse(ResponseStatus.SUCCESS, ResponseReason.OK, mul);
 	}
 
 	@Override

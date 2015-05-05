@@ -1,5 +1,5 @@
 /*
- * File: StorageService.java Date: 30-Apr-2015 This source code is part of Java
+ * File: ResponseStatus.java Date: 05-May-2015 This source code is part of Java
  * Pathshala-Wisdom Being Shared. This program is protected by copyright law but
  * you are authorise to learn & gain ideas from it. Its unauthorised use is
  * explicitly prohibited & any addition & removal of material. If want to
@@ -8,18 +8,17 @@
  * obtain retention orders and to prosecute the authors of any infraction. Visit
  * us at www.javapathshala.com
  */
-package com.jp.ws.api;
-
-import java.util.List;
-
-import com.jp.ws.api.response.MathResponse;
+package com.jp.ws.api.response;
 
 /**
  * @author Dimit Chadha
  */
-public interface StorageService {
+public enum ResponseStatus {
 
-	void record(String party);
+	// Indicates the request was successful.
+	SUCCESS,
 
-	MathResponse multiple(List<Integer> numbers);
+	// Indicates the specific request failed. This status means that only the
+	// current request failed
+	REQUEST_FAILURE;
 }
