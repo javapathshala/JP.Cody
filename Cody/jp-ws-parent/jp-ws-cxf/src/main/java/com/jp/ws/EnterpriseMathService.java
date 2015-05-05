@@ -24,6 +24,7 @@ import com.jp.ws.api.StorageService;
  * @author Dimit Chadha
  */
 @WebService(serviceName = "MathService", portName = "MathPort", name = "MathEndPoint", targetNamespace = "http://jp.com/math/ws")
+//http://localhost:8080/jp-ws-cxf/svc/ws/Math?wsdl
 public class EnterpriseMathService implements MathService {
 
 	private InquiryService inquiryDelegate;
@@ -57,7 +58,7 @@ public class EnterpriseMathService implements MathService {
 
 	@Override
 	public int multiple(List<Integer> numbers) {
-		return inquiryDelegate.multiple(numbers);
+		return storageDelegate.multiple(numbers);
 	}
 
 	// Storage Method

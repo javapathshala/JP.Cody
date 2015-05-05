@@ -22,7 +22,12 @@
 			<artifactId>jp-ws-impl-one</artifactId>
 			<version>${project.version}</version>
 		</dependency>
-
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>jp-ws-impl-two</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+		
 		<!-- CXF -->
 		<dependency>
 			<groupId>org.apache.cxf</groupId>
@@ -42,12 +47,8 @@
 			<artifactId>spring-core</artifactId>
 			<version>${version.org.springframework}</version>
 			<scope>runtime</scope>
-			<!-- <exclusions>
-				<exclusion>
-					<groupId>commons-logging</groupId>
-					<artifactId>commons-logging</artifactId>
-				</exclusion>
-			</exclusions> -->
+			<!-- <exclusions> <exclusion> <groupId>commons-logging</groupId> <artifactId>commons-logging</artifactId> 
+				</exclusion> </exclusions> -->
 		</dependency>
 		<dependency>
 			<groupId>org.springframework</groupId>

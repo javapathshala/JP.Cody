@@ -30,7 +30,7 @@ public class MathServiceImplOne implements MathService {
 
 	@Override
 	public int multiple(List<Integer> numbers) {
-		int mul = 0;
+		int mul = 1;
 		for (Integer num : numbers) {
 			mul *= num;
 		}
