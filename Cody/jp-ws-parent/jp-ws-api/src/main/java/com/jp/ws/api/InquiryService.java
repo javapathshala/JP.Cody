@@ -18,6 +18,5 @@ import java.util.List;
 public interface InquiryService {
 
 	int summation(List<Integer> numbers);
-	
-	int multiple(List<Integer> numbers);
+
 }

@@ -15,7 +15,10 @@
 	<modules>
 		<module>jp-ws-api</module>
 		<module>jp-ws-impl-one</module>
+		<module>jp-ws-impl-two</module>
 		<module>jp-ws-cxf</module>
+		<module>jp-ws-client</module>
+		<module>jp-ws-test</module>
 	</modules>
 
 	<dependencies>

@@ -10,6 +10,9 @@
         <dependent-module archiveName="jp-ws-impl-one-0.0.1-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/jp-ws-impl-one/jp-ws-impl-one">
             <dependency-type>uses</dependency-type>
         </dependent-module>
+        <dependent-module archiveName="jp-ws-impl-two-0.0.1-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/jp-ws-impl-two/jp-ws-impl-two">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
         <dependent-module archiveName="jp-status-api-0.0.1-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/jp-status-api/jp-status-api">
             <dependency-type>uses</dependency-type>
         </dependent-module>

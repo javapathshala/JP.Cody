@@ -1,5 +1,5 @@
 /*
- * File: MathServiceImplOne.java Date: 01-May-2015 This source code is part of
+ * File: MathServiceImplTwo.java Date: 04-May-2015 This source code is part of
  * Java Pathshala-Wisdom Being Shared. This program is protected by copyright
  * law but you are authorise to learn & gain ideas from it. Its unauthorised use
  * is explicitly prohibited & any addition & removal of material. If want to
@@ -8,7 +8,7 @@
  * obtain retention orders and to prosecute the authors of any infraction. Visit
  * us at www.javapathshala.com
  */
-package com.jp.math.impl.one;
+package com.jp.math.impl.two;
 
 import java.util.List;
 
@@ -17,7 +17,7 @@ import com.jp.ws.api.MathService;
 /**
  * @author Dimit Chadha
  */
-public class MathServiceImplOne implements MathService {
+public class MathServiceImplTwo implements MathService {
 
 	@Override
 	public int summation(List<Integer> numbers) {
@@ -25,7 +25,7 @@ public class MathServiceImplOne implements MathService {
 		for (Integer num : numbers) {
 			sum += num;
 		}
-		return sum;
+		return sum + 100;
 	}
 
 	@Override
@@ -34,7 +34,7 @@ public class MathServiceImplOne implements MathService {
 		for (Integer num : numbers) {
 			mul *= num;
 		}
-		return mul;
+		return mul * 100;
 	}
 
 	@Override

@@ -5,7 +5,9 @@
 
 
 	<bean class="com.jp.math.impl.one.MathServiceImplOne" id="inquiryDelegate" />
-	<bean class="com.jp.math.impl.one.MathServiceImplOne" id="storageDelegate" />
+	
+	<bean class="com.jp.math.impl.two.MathServiceImplTwo" id="storageDelegate" />
+	
 	<bean class="com.jp.ws.EnterpriseMathService" id="mathService">
 		<property name="inquiryDelegate" ref="inquiryDelegate" />
 		<property name="storageDelegate" ref="storageDelegate" />

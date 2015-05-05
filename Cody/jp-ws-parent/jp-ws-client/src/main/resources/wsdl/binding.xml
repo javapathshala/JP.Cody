@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bindings xmlns="http://java.sun.com/xml/ns/jaxws" xmlns:jaxb="http://java.sun.com/xml/ns/jaxb"
+	xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/jaxws http://java.sun.com/xml/ns/jaxws/wsdl_customizationschema_2_0.xsd
+                              http://java.sun.com/xml/ns/jaxb http://java.sun.com/xml/ns/jaxb/bindingschema_2_0.xsd">
+	<bindings node="wsdl:definitions/wsdl:types/xs:schema">
+		<jaxb:globalBindings>
+			<jaxb:javaType name="java.util.Calendar"
+				parseMethod="javax.xml.bind.DatatypeConverter.parseDate"
+				printMethod="javax.xml.bind.DatatypeConverter.printDate" xmlType="xs:date" />
+			<jaxb:javaType name="java.util.Calendar"
+				parseMethod="javax.xml.bind.DatatypeConverter.parseDateTime"
+				printMethod="javax.xml.bind.DatatypeConverter.printDateTime"
+				xmlType="xs:dateTime" />
+		</jaxb:globalBindings>
+	</bindings>
+</bindings>
