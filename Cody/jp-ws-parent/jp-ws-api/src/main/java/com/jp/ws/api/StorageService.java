@@ -12,6 +12,8 @@ package com.jp.ws.api;
 
 import java.util.List;
 
+import com.jp.ws.api.response.MathResponse;
+
 /**
  * @author Dimit Chadha
  */
@@ -19,5 +21,5 @@ public interface StorageService {
 
 	void record(String party);
 
-	int multiple(List<Integer> numbers);
+	MathResponse multiple(List<Integer> numbers);
 }

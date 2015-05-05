@@ -14,6 +14,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.jp.math.ws.MathEndPoint;
+import com.jp.math.ws.MathResponse;
 import com.jp.ws.client.MathEndpointFactory;
 
 /**
@@ -33,8 +34,20 @@ public class WSTest {
 		numberList.add(new Integer(2));
 		numberList.add(new Integer(2));
 
-		System.out.println("Sum is : " + endPoint.summation(numberList));
-		System.out.println("Product is : " + endPoint.multiple(numberList));
+		MathResponse summation = endPoint.summation(numberList);
+
+		System.out.println("Sum Response : ");
+		System.out.println(summation.getStatusCode());
+		System.out.println(summation.getReasonCode());
+		System.out.println(summation.getMessage());
+		System.out.println(summation.getAnswer());
+
+		MathResponse productResponse = endPoint.multiple(numberList);
+		System.out.println("Product is : ");
+		System.out.println(productResponse.getStatusCode());
+		System.out.println(productResponse.getReasonCode());
+		System.out.println(productResponse.getMessage());
+		System.out.println(productResponse.getAnswer());
 
 	}
 

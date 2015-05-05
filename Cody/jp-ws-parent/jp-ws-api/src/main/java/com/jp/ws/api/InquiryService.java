@@ -12,11 +12,13 @@ package com.jp.ws.api;
 
 import java.util.List;
 
+import com.jp.ws.api.response.MathResponse;
+
 /**
  * @author Dimit Chadha
  */
 public interface InquiryService {
 
-	int summation(List<Integer> numbers);
+	MathResponse summation(List<Integer> numbers);
 
 }
