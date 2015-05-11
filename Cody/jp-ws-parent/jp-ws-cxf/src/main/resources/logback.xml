@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+	<property name="APPLICATION_NAME" value="jp-ws" />
+	<property name="LOG_DIRECTORY" value="${catalina.base}/logs" />
+
+	<appender name="FILE"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>${LOG_DIRECTORY}/${APPLICATION_NAME}.log</file>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>${LOG_DIRECTORY}/${APPLICATION_NAME}.%d{yyyy-MM-dd}.log
+			</fileNamePattern>
+			<maxHistory>10</maxHistory>
+		</rollingPolicy>
+		<encoder>
+			<pattern>%date{ISO8601,GMT} [%-15thread] %-5level - %msg%n</pattern>
+		</encoder>
+	</appender>
+
+	<!-- <appender name="AUDIT-FILE" class="ch.qos.logback.core.rolling.RollingFileAppender"> 
+		<file>${LOG_DIRECTORY}/${APPLICATION_NAME}-audit.log</file> <rollingPolicy 
+		class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy"> <fileNamePattern>${LOG_DIRECTORY}/${APPLICATION_NAME}-audit.%d{yyyy-MM-dd}.log</fileNamePattern> 
+		</rollingPolicy> <encoder> <pattern>%date{ISO8601,GMT} %msg%n</pattern> </encoder> 
+		</appender> <logger name="jp-audit" level="INFO" additivity="false"> <appender-ref 
+		ref="AUDIT-FILE" /> </logger> -->
+
+	<logger name="com.jp" level="DEBUG" />
+	<logger name="com.hazelcast" level="DEBUG" />
+	<root level="DEBUG">
+		<appender-ref ref="FILE" />
+	</root>
+</configuration>

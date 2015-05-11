@@ -15,17 +15,17 @@ package com.jp.ws.api.response;
  */
 public class MathResponse extends AbstractResponse {
 
-	private int answer;
+	private String answer;
 
 	public MathResponse() {
 		super();
 	}
 
-	public MathResponse(ResponseStatus status, ResponseReason reason, int answer) {
+	public MathResponse(ResponseStatus status, ResponseReason reason, String answer) {
 		this(status, reason, null, answer);
 	}
 
-	public MathResponse(ResponseStatus status, ResponseReason reason, String message, int answer) {
+	public MathResponse(ResponseStatus status, ResponseReason reason, String message, String answer) {
 		super(status, reason, message);
 		this.answer = answer;
 	}
@@ -33,7 +33,7 @@ public class MathResponse extends AbstractResponse {
 	/**
 	 * @return the answer
 	 */
-	public int getAnswer() {
+	public String getAnswer() {
 		return answer;
 	}
 
@@ -41,7 +41,7 @@ public class MathResponse extends AbstractResponse {
 	 * @param answer
 	 *            the answer to set
 	 */
-	public void setAnswer(int answer) {
+	public void setAnswer(String answer) {
 		this.answer = answer;
 	}
 

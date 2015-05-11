@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hazelcast xmlns="http://www.hazelcast.com/schema/config"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://www.hazelcast.com/schema/config http://hazelcast.com/schema/config/hazelcast-config-3.4.xsd">
+    <network>
+        <join>
+            <multicast enabled="false" />
+            <tcp-ip enabled="true">
+                <member>10.213.18.49</member>
+            </tcp-ip>
+        </join>
+        <port auto-increment="false">22305</port>
+    </network>
+    <multimap name="calculatedResult">
+        <value-collection-type>LIST</value-collection-type>
+    </multimap>
+    <properties>
+        <property name="hazelcast.logging.type">slf4j</property>
+    </properties>
+</hazelcast>
