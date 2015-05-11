@@ -28,7 +28,7 @@ public class MathServiceImplOne implements MathService {
 		for (Integer num : numbers) {
 			sum += num;
 		}
-		return new MathResponse(ResponseStatus.SUCCESS, ResponseReason.OK, sum);
+		return new MathResponse(ResponseStatus.SUCCESS, ResponseReason.OK, sum + "");
 	}
 
 	@Override
@@ -37,7 +37,7 @@ public class MathServiceImplOne implements MathService {
 		for (Integer num : numbers) {
 			mul *= num;
 		}
-		return new MathResponse(ResponseStatus.SUCCESS, ResponseReason.OK, mul);
+		return new MathResponse(ResponseStatus.SUCCESS, ResponseReason.OK, mul + "");
 	}
 
 	@Override

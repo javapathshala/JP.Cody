@@ -15,5 +15,12 @@
 			<artifactId>jp-ws-api</artifactId>
 			<version>${project.version}</version>
 		</dependency>
+
+		<!-- Hazel Cast -->
+		<dependency>
+			<groupId>com.hazelcast</groupId>
+			<artifactId>hazelcast</artifactId>
+			<version>3.4</version>
+		</dependency>
 	</dependencies>
 </project>

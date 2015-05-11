@@ -22,27 +22,40 @@ import com.jp.ws.api.response.ResponseStatus;
  */
 public class MathServiceImplTwo implements MathService {
 
+	private MathService hazelDelegate;
+
 	@Override
 	public MathResponse summation(List<Integer> numbers) {
 		int sum = 0;
 		for (Integer num : numbers) {
 			sum += num;
 		}
-		return new MathResponse(ResponseStatus.SUCCESS, ResponseReason.OK, sum + 100);
+		return new MathResponse(ResponseStatus.SUCCESS, ResponseReason.OK, "" + sum + 100);
 	}
 
 	@Override
 	public MathResponse multiple(List<Integer> numbers) {
-		int mul = 1;
-		for (Integer num : numbers) {
-			mul *= num;
-		}
-		return new MathResponse(ResponseStatus.SUCCESS, ResponseReason.OK, mul * 100);
+		// int mul = 1;
+		// for (Integer num : numbers) {
+		// mul *= num;
+		// }
+		// return new MathResponse(ResponseStatus.SUCCESS, ResponseReason.OK,
+		// mul * 100);
+		return hazelDelegate.multiple(numbers);
+
 	}
 
 	@Override
 	public void record(String party) {
 		System.out.println("Party name : " + party);
+	}
+
+	/**
+	 * @param hazelDelegate
+	 *            the hazelDelegate to set
+	 */
+	public void setHazelDelegate(MathService hazelDelegate) {
+		this.hazelDelegate = hazelDelegate;
 	}
 
 }
