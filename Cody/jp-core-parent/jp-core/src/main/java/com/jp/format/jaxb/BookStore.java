@@ -8,7 +8,7 @@
  * obtain retention orders and to prosecute the authors of any infraction. Visit
  * us at www.javapathshala.com
  */
-package com.jp.jaxb;
+package com.jp.format.jaxb;
 
 import java.util.ArrayList;
 

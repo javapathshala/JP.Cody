@@ -12,7 +12,7 @@
  * 
  * Visit us at www.javapathshala.com
  */
-package com.jp.jaxb;
+package com.jp.format.jaxb;
 
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlValue;

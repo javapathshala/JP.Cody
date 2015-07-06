@@ -8,7 +8,7 @@
  * obtain retention orders and to prosecute the authors of any infraction. Visit
  * us at www.javapathshala.com
  */
-package com.jp.jaxb.xml;
+package com.jp.format.jaxb.xml;
 
 import java.io.FileReader;
 import java.io.IOException;
@@ -17,7 +17,7 @@ import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Unmarshaller;
 
-import com.jp.jaxb.BookStore;
+import com.jp.format.jaxb.BookStore;
 
 /**
  * @author Dimit Chadha
