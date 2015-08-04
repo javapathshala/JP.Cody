@@ -19,6 +19,10 @@
 		<module>jp-ws-cxf</module>
 		<module>jp-ws-client</module>
 		<module>jp-ws-test</module>
+		
+		<module>jp-ws-full-api</module>
+		<module>jp-ws-full-core</module>
+		<module>jp-ws-full</module>
 	</modules>
 
 	<dependencies>
