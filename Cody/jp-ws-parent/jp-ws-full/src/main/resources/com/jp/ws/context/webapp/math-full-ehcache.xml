@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	 http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="cacheManager" class="net.sf.ehcache.CacheManager" destroy-method="shutdown">
+		<constructor-arg name="configurationInputStream" value="#{clusteringCacheConfig.inputStream}" />
+	</bean>
+
+	<!-- Establish the (Ehcache) Cluster Cache used to report each cluster member status -->
+	<bean id="clusteringCacheConfig" class="org.springframework.core.io.ClassPathResource">
+		<constructor-arg name="path" value="#{servletContext.contextPath}-cache.xml" />
+	</bean>
+
+</beans>

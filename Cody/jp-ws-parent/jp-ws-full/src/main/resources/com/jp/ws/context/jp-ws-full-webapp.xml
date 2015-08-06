@@ -7,6 +7,9 @@
 	<import resource="classpath:META-INF/cxf/cxf.xml" />
 
 	<import resource="classpath:com/jp/ws/context/webapp/math-full-beans.xml" />
+	
+	<import resource="classpath:com/jp/ws/context/webapp/math-full-ehcache.xml" />
+	
 	<import resource="classpath:com/jp/ws/context/webapp/ws-full-endpoint.xml" />
 
 </beans>
