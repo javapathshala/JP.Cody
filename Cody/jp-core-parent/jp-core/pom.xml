@@ -11,11 +11,19 @@
 	<description>This consist of small java core codes</description>
 
 	<dependencies>
+		<!-- Simple JSON -->
+		<dependency>
+			<groupId>com.googlecode.json-simple</groupId>
+			<artifactId>json-simple</artifactId>
+			<version>1.1.1</version>
+		</dependency>
 		<!-- For Object to JSON Translator -->
 		<dependency>
 			<groupId>com.fasterxml.jackson.core</groupId>
 			<artifactId>jackson-databind</artifactId>
 			<version>2.4.4</version>
 		</dependency>
+		
+
 	</dependencies>
 </project>
