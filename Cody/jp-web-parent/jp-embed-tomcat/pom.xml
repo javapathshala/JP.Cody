@@ -1,0 +1,51 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.jp.wisdom.web</groupId>
+		<artifactId>jp-web-parent</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
+	<artifactId>jp-embed-tomcat</artifactId>
+	<packaging>war</packaging>
+	<name>Tomcat Server Embedded in Web App</name>
+	<description>Tomcat Server Embedded in Web App</description>
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<tomcat7Version>8.0.24</tomcat7Version>
+	</properties>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.tomcat.maven</groupId>
+				<artifactId>tomcat7-maven-plugin</artifactId>
+				<version>2.1</version>
+				<executions>
+					<execution>
+						<id>tomcat-run</id>
+						<goals>
+							<goal>exec-war-only</goal>
+						</goals>
+						<phase>package</phase>
+						<configuration>
+							<path>/jp-embed-tomcat</path>
+							<!-- optional only if you want to use a preconfigured server.xml file -->
+							<!-- <serverXml>src/main/tomcatconf/server.xml</serverXml> -->
+
+							<!-- optional values which can be configurable -->
+							<attachArtifactClassifier>exec-war</attachArtifactClassifier>
+							<attachArtifactClassifierType>jar</attachArtifactClassifierType>
+							<finalName>test.jar</finalName>
+							<charset>utf-8</charset>
+							<update>true</update>
+							<!-- <url>http:// localhost:8080/manager/text</url> <username>tomcat</username> <password>tomcatuser</password> 
+								<warRunDependencies> <warRunDependency> <dependency> <groupId>a groupId</groupId> <artifactId>and artifactId</artifactId> 
+								<version>version</version> <type>war</type> </dependency> <contextPath>/</contextPath> </warRunDependency> 
+								</warRunDependencies> -->
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+</project>
