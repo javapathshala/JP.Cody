@@ -17,6 +17,7 @@
 			<props>
 				<!-- <prop key="Test.do">Test</prop> -->
 				<prop key="Welcome.do">Welcome</prop>
+				<prop key="SessRepl.do">Index</prop>
 			<!-- 	<prop key="CustomerListViewDisplay.do">CustomerListViewDisplay</prop>
 				<prop key="LoginDisplay.do">LoginDisplay</prop> -->
 			</props>
@@ -28,6 +29,9 @@
 	</bean> -->
 	<bean id="Welcome" class="com.jp.spring.api.controllers.WelcomeController">
 		<property name="successView" value="Welcome" />
+	</bean>
+	<bean id="Index" class="com.jp.spring.api.controllers.WelcomeController">
+		<property name="successView" value="index" />
 	</bean>
 	<!-- <bean id="CustomerListViewDisplay"
 		class="com.application.spring.controller.CustomerListViewDisplayController">

@@ -25,20 +25,14 @@ import org.springframework.web.bind.annotation.RequestMethod;
  *
  */
 @Controller
-public class WelcomeController {
+public class WelcomeController extends AbstractController {
 
-	private String successView;
+
 
 	@RequestMapping(value = "/Welcome.do", method = RequestMethod.GET)
 	public String login(ModelMap model) {
 		return getSuccessView();
 	}
 
-	public String getSuccessView() {
-		return successView;
-	}
-
-	public void setSuccessView(String successView) {
-		this.successView = successView;
-	}
+	
 }
