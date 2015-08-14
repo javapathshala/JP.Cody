@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+        xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+                           http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd
+                           http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+	
+	<context:annotation-config />
+	<!-- mvc:resources mapping="/resources/**" location="/images/, /stylesheets/" 
+		/ -->
+
+	<bean id="urlMapping"
+		class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+		<property name="mappings">
+			<props>
+				<!-- <prop key="Test.do">Test</prop> -->
+				<prop key="Welcome.do">Welcome</prop>
+			<!-- 	<prop key="CustomerListViewDisplay.do">CustomerListViewDisplay</prop>
+				<prop key="LoginDisplay.do">LoginDisplay</prop> -->
+			</props>
+		</property>
+	</bean>
+
+	<!-- <bean id="Test" class="com.application.spring.controller.Test">
+		<property name="successView" value="Test" />
+	</bean> -->
+	<bean id="Welcome" class="com.jp.spring.api.controllers.WelcomeController">
+		<property name="successView" value="Welcome" />
+	</bean>
+	<!-- <bean id="CustomerListViewDisplay"
+		class="com.application.spring.controller.CustomerListViewDisplayController">
+		<property name="successView" value="CustomerListViewPage" />
+		<property name="failureView" value="loginPage" />
+	</bean>
+
+	<bean id="LoginDisplay"
+		class="com.application.spring.controller.LoginDisplayController">
+		<property name="successView" value="loginPage" />
+	</bean> -->
+
+
+
+<!-- 	<bean id="jstlViewResolver" class="com.application.spring.util.JstlViewResolver">
+		<property name="order" value="1" />
+		<property name="viewClass"
+			value="org.springframework.web.servlet.view.JstlView" />
+		<property name="prefix" value="/jsp/" />
+		<property name="suffix" value=".jsp" />
+	</bean> -->
+ <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="viewClass"  value="org.springframework.web.servlet.view.JstlView"/>
+        <property name="prefix" value="/WEB-INF/jsp/" />
+        <property name="suffix" value=".jsp" />
+    </bean>
+	<!-- <bean id="customerSearchService" class="com.application.spring.search.CustomerSearchServiceImpl" />
+
+	
+	<bean id="messageSource"
+		class="org.springframework.context.support.ResourceBundleMessageSource">
+		<property name="basenames">
+			<list>
+				<value>mymessages</value>
+			</list>
+		</property>
+	</bean> -->
+
+</beans>
