@@ -44,7 +44,7 @@ public class JPCaching implements JPCache {
 		jpcache.store("demo", "key3", "value3");
 
 		System.out.println("Reading from cache for Key - " + jpcache.find("demo", "key3"));
-		// manager.shutdown();
+		manager.shutdown();
 	}
 
 	@Override
@@ -56,6 +56,7 @@ public class JPCaching implements JPCache {
 	@Override
 	public Object find(String cacheName, String key) {
 		Cache cache = manager.getCache(cacheName);
+		System.out.println("Total elements in cache -->" + cache.getSize());
 		Element element = cache.get(key);
 		return element != null ? element.getObjectValue() : "No Value found in cache";
 	}
