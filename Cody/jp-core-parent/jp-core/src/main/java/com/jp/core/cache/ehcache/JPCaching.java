@@ -33,7 +33,7 @@ public class JPCaching implements JPCache {
 	public static void main(String[] args) {
 
 		manager = CacheManager.newInstance("src/main/java/com/jp/core/cache/ehcache/ehcache.xml");
-		
+
 		String[] cacheNames = CacheManager.getInstance().getCacheNames();
 		System.out.println("Cache Avaliable are --> " + cacheNames.toString());
 		JPCaching jpcache = new JPCaching();
@@ -56,8 +56,8 @@ public class JPCaching implements JPCache {
 	@Override
 	public Object find(String cacheName, String key) {
 		Cache cache = manager.getCache(cacheName);
-		Object objectValue = cache.get(key).getObjectValue();
-		return objectValue;
+		Element element = cache.get(key);
+		return element != null ? element.getObjectValue() : "No Value found in cache";
 	}
 
 }
