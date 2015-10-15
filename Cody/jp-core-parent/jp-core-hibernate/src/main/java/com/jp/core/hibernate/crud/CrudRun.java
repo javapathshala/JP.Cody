@@ -11,7 +11,7 @@
  * and to prosecute the authors of any infraction.
  * Visit us at www.javapathshala.com
  */
-package com.jp.core.hibernate.run;
+package com.jp.core.hibernate.crud;
 
 import java.sql.Timestamp;
 import java.util.Calendar;

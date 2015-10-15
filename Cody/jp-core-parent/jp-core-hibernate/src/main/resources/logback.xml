@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration>
-	<property name="APPLICATION_NAME" value="jp-ws" />
-	<property name="LOG_DIRECTORY" value="${catalina.base}/logs" />
+	<property name="APPLICATION_NAME" value="jp-core-hibernate" />
+	<property name="LOG_DIRECTORY" value="logs" />
 
 	<appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
 		<file>${LOG_DIRECTORY}/${APPLICATION_NAME}.log</file>
@@ -16,7 +16,7 @@
 	</appender>
 
 	<logger name="com.jp.core.hibernate" level="INFO" />
-	
+	<logger name="org.hibernate" level="OFF" />
 
 	<root level="INFO">
 		<appender-ref ref="FILE" />
