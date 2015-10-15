@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.jp.core.hibernate.entities">
+
+	<class name="Employee" table="employee">
+		<id name="recordId" column="employeeId">
+			<generator class="increment" />
+		</id>
+		<property name="name" column="name" />
+		<property name="address" column="address" />
+		<property name="salary" column="salary" />
+		<!-- <property name="lastModified" type="timestamp" insert="false" update="true" generated="never"
+			precision="3">
+			<column default="current_timestamp" name="lastModified" not-null="true" precision="3" />
+		</property> -->
+		<property name="lastModified" type="timestamp" update="true" generated="never" precision="3" />
+	</class>
+
+</hibernate-mapping>

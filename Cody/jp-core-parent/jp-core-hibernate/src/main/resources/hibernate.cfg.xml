@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+
+<hibernate-configuration>
+
+	<session-factory>
+
+
+		<!-- H2 DB -->
+		<property name="connection.driver_class">org.h2.Driver</property>
+		<property name="connection.url">jdbc:h2:jp-core-hibernate/db/javapathshala</property>
+		<property name="dialect">org.hibernate.dialect.H2Dialect</property>
+		<property name="hbm2ddl.auto">update</property>
+		<property name="new_generator_mappings">true</property>
+
+
+		<!-- MySQL -->
+		<!-- <property name="connection.driver_class">com.mysql.jdbc.Driver</property> <property name="connection.url">jdbc:mysql://mcdevportal.vertexna.net/contactdb</property> 
+			<property name="connection.username">contactdba</property> <property name="connection.password">VQCsCUiTL-Hh</property> 
+			<property name="dialect">org.hibernate.dialect.MySQL5InnoDBDialect</property> -->
+
+
+		<!-- Enable Hibernate's automatic session context management -->
+		<property name="current_session_context_class">thread</property>
+
+		<!-- Disable the second-level cache -->
+		<property name="cache.provider_class">org.hibernate.cache.NoCacheProvider</property>
+
+		<!-- Enable the second-level cache -->
+		<!-- <property name="cache.use_second_level_cache">true</property>
+		<property name="cache.provider_class">org.hibernate.cache.EhCacheProvider</property> -->
+		
+		<!-- Formatting -->
+		<property name="show_sql">true</property>
+		<property name="format_sql">true</property>
+
+
+		<mapping resource="Employee.hbm.xml" />
+		<mapping resource="UserDetails.hbm.xml" />
+
+
+		<!-- mapping class="com.jp.hib.entities.onetoone.Person"/> <mapping class="com.jp.hib.entities.onetoone.Vehicle"/ -->
+
+		<!-- >mapping class="com.jp.hib.entities.onetomany.User"/> <mapping class="com.jp.hib.entities.onetomany.Cars"/ -->
+
+		<!-- mapping class="com.jp.hib.entities.cascadetypes.UserCas"/> <mapping class="com.jp.hib.entities.cascadetypes.CarsCas"/ -->
+
+		<!-- mapping class="com.jp.hib.entities.inher.singletable.Vehicle"/> <mapping class="com.jp.hib.entities.inher.singletable.TwoWheeler"/> 
+			<mapping class="com.jp.hib.entities.inher.singletable.FourWheeler"/ -->
+
+		<!-- mapping class="com.jp.hib.entities.inher.tableclass.Vehicle"/> <mapping class="com.jp.hib.entities.inher.tableclass.TwoWheeler"/> 
+			<mapping class="com.jp.hib.entities.inher.tableclass.FourWheeler"/ -->
+
+		<!-- mapping class="com.jp.hib.entities.hql.UserDetails"/ -->
+		<!--mapping class="com.jp.hib.entities.named.queries.UserDetails"/ -->
+
+
+	</session-factory>
+
+
+</hibernate-configuration>
