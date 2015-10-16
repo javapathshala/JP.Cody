@@ -47,20 +47,7 @@
 		<mapping resource="UserDetails.hbm.xml" />
 
 
-		<!-- mapping class="com.jp.hib.entities.onetoone.Person"/> <mapping class="com.jp.hib.entities.onetoone.Vehicle"/ -->
-
-		<!-- >mapping class="com.jp.hib.entities.onetomany.User"/> <mapping class="com.jp.hib.entities.onetomany.Cars"/ -->
-
-		<!-- mapping class="com.jp.hib.entities.cascadetypes.UserCas"/> <mapping class="com.jp.hib.entities.cascadetypes.CarsCas"/ -->
-
-		<!-- mapping class="com.jp.hib.entities.inher.singletable.Vehicle"/> <mapping class="com.jp.hib.entities.inher.singletable.TwoWheeler"/> 
-			<mapping class="com.jp.hib.entities.inher.singletable.FourWheeler"/ -->
-
-		<!-- mapping class="com.jp.hib.entities.inher.tableclass.Vehicle"/> <mapping class="com.jp.hib.entities.inher.tableclass.TwoWheeler"/> 
-			<mapping class="com.jp.hib.entities.inher.tableclass.FourWheeler"/ -->
-
-		<!-- mapping class="com.jp.hib.entities.hql.UserDetails"/ -->
-		<!--mapping class="com.jp.hib.entities.named.queries.UserDetails"/ -->
+		<mapping class="com.jp.core.hibernate.namedQueries.NameQueryTable"/>
 
 
 	</session-factory>
