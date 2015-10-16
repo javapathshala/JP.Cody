@@ -13,14 +13,22 @@
  */
 package com.jp.core.hibernate.entities;
 
+
 /**
  * 
  * 
  * @author Dimit Chadha
  *
  */
+// @Entity
+// @Table(name = "USER_DETAILS")
+// @Cacheable
+// @Cache(usage = CacheConcurrencyStrategy.READ_ONLY)
 public class UserDetails extends AbstractRecord {
 
+	// @Id
+	// @GeneratedValue(strategy = GenerationType.AUTO)
+	// @Column(name = "USER_ID")
 	private String userName;
 
 	/**
@@ -37,7 +45,8 @@ public class UserDetails extends AbstractRecord {
 		this.userName = userName;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
 	 * @see java.lang.Object#toString()
 	 */
 	@Override

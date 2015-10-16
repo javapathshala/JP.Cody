@@ -68,6 +68,7 @@ public class DatabaseConnection extends AbstractDatabaseService{
 	public static void closeSession() throws HibernateException {
 		Session s = (Session) session.get();
 		session.set(null);
+		session.remove();
 		if (s != null)
 			s.close();
 		System.out.println("Session Closed");

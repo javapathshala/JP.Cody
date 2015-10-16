@@ -354,7 +354,7 @@ public abstract class AbstractDatabaseService {
 			// If the session is open
 			if (session.isOpen()) {
 				// Close the session
-				session.close();
+				//session.close();
 			}
 		}
 	}

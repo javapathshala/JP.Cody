@@ -40,7 +40,7 @@
 		
 		<!-- Formatting -->
 		<property name="show_sql">true</property>
-		<property name="format_sql">true</property>
+		<property name="format_sql">false</property>
 
 
 		<mapping resource="Employee.hbm.xml" />
