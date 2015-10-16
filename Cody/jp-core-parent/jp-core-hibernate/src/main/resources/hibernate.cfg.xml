@@ -30,10 +30,14 @@
 
 		<!-- Enabling Second-Level Cache -->
 		<property name="cache.use_second_level_cache">true</property>
+		
+		<!-- Cache Provider for Second-Level cache -->
 		<property name="hibernate.cache.region.factory_class">org.hibernate.cache.ehcache.EhCacheRegionFactory</property>
 		<property name="cache.provider_class">org.hibernate.cache.EhCacheProvider</property>
 
-		<!-- <property name="cache.use_query_cache">true</property> -->
+		<!-- Enable Query Cache -->
+		<property name="cache.use_query_cache">true</property>
+		
 		<!-- Formatting -->
 		<property name="show_sql">true</property>
 		<property name="format_sql">true</property>
