@@ -16,7 +16,7 @@
 	</appender>
 
 	<logger name="com.jp.core.hibernate" level="INFO" />
-	<logger name="org.hibernate" level="OFF" />
+	<logger name="org.hibernate" level="DEBUG" />
 
 	<root level="INFO">
 		<appender-ref ref="FILE" />

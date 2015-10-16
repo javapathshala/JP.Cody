@@ -5,7 +5,7 @@
 
 <hibernate-mapping package="com.jp.core.hibernate.entities">
 
-	<class name="Employee" table="employee">
+	<class name="Employee" table="employee" >
 		<id name="recordId" column="employeeId">
 			<generator class="increment" />
 		</id>

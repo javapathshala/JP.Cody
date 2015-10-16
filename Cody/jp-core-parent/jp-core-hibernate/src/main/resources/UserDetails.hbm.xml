@@ -9,7 +9,8 @@
 		<meta attribute="class-description">
 			This class contains the User detail.
 		</meta>
-	<!-- 	<cache usage="read-write" /> -->
+		<!--  Making this entity cache=able -->
+	<cache usage="read-only" />
 
 		<id name="recordId" column="userId">
 			<generator class="increment" />

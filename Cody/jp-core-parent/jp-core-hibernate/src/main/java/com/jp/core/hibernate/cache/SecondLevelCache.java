@@ -1,6 +1,6 @@
 /*
- * File: FirstLevelCache.java
- * Date: 08-Sep-2015
+ * File: SecondLevelCache.java
+ * Date: 15-Oct-2015
  * This source code is part of Java Pathshala-Wisdom Being Shared.
  * This program is protected by copyright law but you are authorise to learn
  * & gain ideas from it. Its unauthorised use is explicitly prohibited & any
@@ -16,7 +16,7 @@ package com.jp.core.hibernate.cache;
 import org.hibernate.Session;
 
 import com.jp.core.hibernate.api.DatabaseConnection;
-import com.jp.core.hibernate.entities.Employee;
+import com.jp.core.hibernate.entities.UserDetails;
 
 /**
  * 
@@ -24,52 +24,50 @@ import com.jp.core.hibernate.entities.Employee;
  * @author Dimit Chadha
  *
  */
-public class FirstLevelCache {
+public class SecondLevelCache {
+
+	/**
+	 * @param args
+	 */
 	public static void main(String[] args) {
 		DatabaseConnection databaseConnection = new DatabaseConnection();
 		try {
-			FirstLevelCache firstLevelCache = new FirstLevelCache();
-			Session session = DatabaseConnection.getSession();
-			firstLevelCache.perform(databaseConnection, session);
+			SecondLevelCache secondLevelCache = new SecondLevelCache();
+			secondLevelCache.perform();
 		} catch (RuntimeException r) {
 			r.printStackTrace();
 		} finally {
 			System.exit(0);
 		}
+	}
+
+	/**
+	 * @param databaseConnection
+	 */
+	private void perform() {
+		Session session = DatabaseConnection.getSession();
+		session.beginTransaction();
+
+		UserDetails value = (UserDetails) session.get(UserDetails.class, 2);
+		printUsers(value);
+		session.getTransaction().commit();
+		DatabaseConnection.closeSession();
+
+		session = DatabaseConnection.getSession();
+		session.beginTransaction();
+
+		UserDetails value1 = (UserDetails) session.get(UserDetails.class, 2);
+		printUsers(value1);
+		session.getTransaction().commit();
+		DatabaseConnection.closeSession();
 
 	}
 
 	/**
-	 * @param session 
-	 * 
+	 * @param users1
 	 */
-	private void perform(DatabaseConnection databaseConnection, Session session) {
-		session.beginTransaction();
-		Employee record = (Employee) session.get(Employee.class, 4);
-		if (record == null) {
-			System.out.println("No Records Found");
-			System.out.println("Trying once again...");
-		} else {
-			System.out.println(record);
-			System.out.println("Updating record to test what happens to FLC");
-			record.setSalary(77777);
-			System.out.println("######");
-			System.out.println("There will be only one select statement,Until session is closed. So by default we have session persist");
-			Employee record1 = (Employee) session.get(Employee.class, 4);
-			System.out.println("######");
-			System.out.println(record1);
-			System.out.println("new object get updated from cache");
-		}
-		session.getTransaction().commit();
-		DatabaseConnection.closeSession();
-		
-		session = DatabaseConnection.getSession();
-		session.beginTransaction();
-
-		Employee employee1 = (Employee) session.get(Employee.class, 4);
-		System.out.println("latest --->" +employee1);
-		session.getTransaction().commit();
-		DatabaseConnection.closeSession();
+	private static void printUsers(UserDetails value) {
+		System.out.println(value);
 	}
 
 }
