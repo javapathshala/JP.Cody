@@ -36,8 +36,8 @@ public class CrudRun<T extends AbstractRecord> {
 	 * @param args
 	 */
 	public static void main(String[] args) throws Exception {
-		//CrudRun<Employee> crudRun = new CrudRun<UserDetails>(Employee.class);
-		CrudRun<UserDetails> crudRun = new CrudRun<UserDetails>(UserDetails.class);
+		CrudRun<Employee> crudRun = new CrudRun<Employee>(Employee.class);
+		//CrudRun<UserDetails> crudRun = new CrudRun<UserDetails>(UserDetails.class);
 		crudRun.process(args, crudRun.getEntity());
 	}
 

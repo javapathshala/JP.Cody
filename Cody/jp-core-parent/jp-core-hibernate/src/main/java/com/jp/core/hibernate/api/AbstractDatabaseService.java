@@ -17,6 +17,7 @@ import java.util.List;
 
 import org.hibernate.Criteria;
 import org.hibernate.HibernateException;
+import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
@@ -157,7 +158,7 @@ public abstract class AbstractDatabaseService {
 			Session session = getSessionFactory().getCurrentSession();
 			try {
 				// Begin a database transaction
-				Transaction tx=session.beginTransaction();
+				Transaction tx = session.beginTransaction();
 				// Create a criteria for all control types
 				Criteria criteria = session.createCriteria(clazz);
 				// If a criteria is defined
@@ -179,8 +180,8 @@ public abstract class AbstractDatabaseService {
 				markTransaction(tx);
 			} finally {
 				// Close the session
-				//session.close();
-				
+				// session.close();
+
 			}
 			// Update the transaction tracker to use the success tracker
 		} catch (HibernateException e) {
@@ -354,7 +355,7 @@ public abstract class AbstractDatabaseService {
 			// If the session is open
 			if (session.isOpen()) {
 				// Close the session
-				//session.close();
+				// session.close();
 			}
 		}
 	}
@@ -387,6 +388,19 @@ public abstract class AbstractDatabaseService {
 				session.close();
 			}
 		}
+	}
+
+	/**
+	 * Return Query
+	 * @param query
+	 * @return
+	 */
+	public Query makeQuery(String query) {
+		// Get a database session
+		Session session = getSessionFactory().getCurrentSession();
+		// Begin a database transaction
+		Transaction transaction = session.beginTransaction();
+		return session.createQuery(query);
 	}
 
 	/**
