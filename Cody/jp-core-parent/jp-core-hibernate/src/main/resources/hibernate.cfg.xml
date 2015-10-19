@@ -45,9 +45,8 @@
 
 		<mapping resource="Employee.hbm.xml" />
 		<mapping resource="UserDetails.hbm.xml" />
-
-
 		<mapping class="com.jp.core.hibernate.namedQueries.NameQueryTable"/>
+		<mapping resource="UserInfo.hbm.xml"/>
 
 
 	</session-factory>
