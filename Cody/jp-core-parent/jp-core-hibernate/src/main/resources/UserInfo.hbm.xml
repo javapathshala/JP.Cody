@@ -20,7 +20,29 @@
 			<property name="state" column="state" update="true" />
 			<property name="country" column="country" update="true" />
 		</component>
+		<component name="officeAddress">
+			<property name="state" column="off_state" update="true" />
+			<property name="country" column="off_country" update="true" />
+		</component>
 
+		<set name="departmentList" cascade="all">
+			<key>
+				<column name="userId" not-null="true"/>
+			</key>
+			<!-- <composite-element class="Department" /> -->
+			<one-to-many class="Department"/>
+		</set>
+	</class>
+	
+	<class name="Department">
+		<meta attribute="class-description">
+			This class contains the Department Info
+		</meta>
+		<id name="deptId" column="deptId">
+			<generator class="increment" />
+		</id>
+		<property name="name" column="name"/>
+		<property name="location" column="location" update="true" />
 	</class>
 
 </hibernate-mapping>

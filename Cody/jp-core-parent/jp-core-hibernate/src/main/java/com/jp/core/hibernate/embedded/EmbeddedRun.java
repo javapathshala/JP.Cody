@@ -53,8 +53,8 @@ public class EmbeddedRun<T extends AbstractRecord> {
 	private void process(Class<T> entity) {
 		try {
 			DatabaseConnection databaseConnection = new DatabaseConnection();
-			displayRecords(databaseConnection, entity);
-			//insertRecord(databaseConnection, entity);
+			// displayRecords(databaseConnection, entity);
+			insertRecord(databaseConnection, entity);
 		} catch (RuntimeException r) {
 			r.printStackTrace();
 		} finally {
@@ -84,6 +84,26 @@ public class EmbeddedRun<T extends AbstractRecord> {
 		address.setCountry("India");
 		address.setState("Delhi");
 		info.setHomeAddress(address);
+
+		address = new Address();
+		address.setState("Dallas");
+		address.setCountry("USA");
+		info.setOfficeAddress(address);
+		
+		
+		// list of departments
+		Department dep= new Department();
+		dep.setLocation("Gu");
+//		dep.setDeptId("1");
+		dep.setName("ECE");
+		info.addDepartment(dep);
+		
+		dep= new Department();
+		dep.setLocation("Hu");
+//		dep.setDeptId("2");
+		dep.setName("CEC");
+		info.addDepartment(dep);
+		
 		databaseConnection.persist(info);
 		displayRecords(databaseConnection, entity);
 	}

@@ -13,12 +13,15 @@
  */
 package com.jp.core.hibernate.api;
 
+import java.io.PrintStream;
+
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
-import org.hibernate.SessionFactory;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.service.ServiceRegistry;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * 
@@ -26,25 +29,28 @@ import org.hibernate.service.ServiceRegistry;
  * @author Dimit Chadha
  *
  */
-public class DatabaseConnection extends AbstractDatabaseService{
+public class DatabaseConnection extends AbstractDatabaseService {
 
-	//private static final SessionFactory sessionFactory;
+	private static final Logger log = LoggerFactory.getLogger(DatabaseConnection.class);
 	static {
 		try {
 			Configuration configuration = new Configuration().configure();
 			ServiceRegistry serviceRegistry = new StandardServiceRegistryBuilder().applySettings(configuration.getProperties()).build();
 			sessionFactory = configuration.buildSessionFactory(serviceRegistry);
 		} catch (Throwable ex) {
-			throw new ExceptionInInitializerError(ex);
+			log.error("Exception in Configuration " + ex);
+			ex.printStackTrace();
+		System.exit(0);
+		
 		}
 	}
 
-//	/**
-//	 * @return
-//	 */
-//	public static SessionFactory getSessionFactory() {
-//		return sessionFactory;
-//	}
+	// /**
+	// * @return
+	// */
+	// public static SessionFactory getSessionFactory() {
+	// return sessionFactory;
+	// }
 
 	public static final ThreadLocal<Session> session = new ThreadLocal<Session>();
 

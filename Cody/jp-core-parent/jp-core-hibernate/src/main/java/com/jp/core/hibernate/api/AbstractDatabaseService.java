@@ -318,6 +318,8 @@ public abstract class AbstractDatabaseService {
 				session.persist(record);
 				// Commit the transaction
 				transaction.commit();
+			} catch (Exception e) {
+				log.error("", e);
 			} finally {
 				markTransaction(transaction);
 			}

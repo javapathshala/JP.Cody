@@ -12,7 +12,7 @@
 		<property name="connection.driver_class">org.h2.Driver</property>
 		<property name="connection.url">jdbc:h2:jp-core-hibernate/db/javapathshala</property>
 		<property name="dialect">org.hibernate.dialect.H2Dialect</property>
-		<property name="hbm2ddl.auto">update</property>
+		<property name="hbm2ddl.auto">create</property>
 		<property name="new_generator_mappings">true</property>
 
 
@@ -30,14 +30,14 @@
 
 		<!-- Enabling Second-Level Cache -->
 		<property name="cache.use_second_level_cache">true</property>
-		
+
 		<!-- Cache Provider for Second-Level cache -->
 		<property name="hibernate.cache.region.factory_class">org.hibernate.cache.ehcache.EhCacheRegionFactory</property>
 		<property name="cache.provider_class">org.hibernate.cache.EhCacheProvider</property>
 
 		<!-- Enable Query Cache -->
 		<property name="cache.use_query_cache">true</property>
-		
+
 		<!-- Formatting -->
 		<property name="show_sql">true</property>
 		<property name="format_sql">false</property>
@@ -45,8 +45,10 @@
 
 		<mapping resource="Employee.hbm.xml" />
 		<mapping resource="UserDetails.hbm.xml" />
-		<mapping class="com.jp.core.hibernate.namedQueries.NameQueryTable"/>
-		<mapping resource="UserInfo.hbm.xml"/>
+		<mapping class="com.jp.core.hibernate.namedQueries.NameQueryTable" />
+		<!-- <mapping resource="Department.hbm.xml" /> -->
+		<mapping resource="UserInfo.hbm.xml" />
+		
 
 
 	</session-factory>

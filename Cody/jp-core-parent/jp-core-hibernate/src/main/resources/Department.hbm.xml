@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.jp.core.hibernate.embedded">
+
+	<class name="Department" table="Department">
+		<meta attribute="class-description">
+			This class contains the Deparment Info
+		</meta>
+		<id name="deptId" column="deptId">
+			<generator class="increment" />
+		</id>
+		<property name="name" column="name" />
+		<property name="location" column="location" update="true" />
+	</class>
+
+</hibernate-mapping>
