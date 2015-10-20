@@ -1,0 +1,2 @@
+<jsp:include page="/WEB-INF/branding/jspf/head-css.jspf" />
+<jsp:include page="/WEB-INF/branding/jspf/head-js.jspf" />

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" targetNamespace="http://jp.com/status/response" xmlns:tns="http://jp.com/status/response" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="application" type="tns:application"/>
+
+  <xs:complexType name="abstractStatusElement" abstract="true">
+    <xs:sequence/>
+    <xs:attribute name="name" type="xs:string" use="required"/>
+    <xs:attribute name="status" type="tns:statusCode" use="required"/>
+  </xs:complexType>
+
+  <xs:complexType name="abstractStatusCollection">
+    <xs:complexContent>
+      <xs:extension base="tns:abstractStatusElement">
+        <xs:sequence/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="application">
+    <xs:complexContent>
+      <xs:extension base="tns:abstractStatusCollection">
+        <xs:sequence>
+          <xs:element name="component" type="tns:component" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="component">
+    <xs:complexContent>
+      <xs:extension base="tns:abstractStatusCollection">
+        <xs:sequence>
+          <xs:element name="aspect" type="tns:aspect" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="aspect">
+    <xs:complexContent>
+      <xs:extension base="tns:abstractStatusElement">
+        <xs:sequence>
+          <xs:element name="message" type="xs:string" minOccurs="0"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:simpleType name="statusCode">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="OK"/>
+      <xs:enumeration value="WARN"/>
+      <xs:enumeration value="ERROR"/>
+      <xs:enumeration value="FATAL"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>
+

@@ -1,0 +1,6 @@
+com\jp\portal\servlet\DestroyedSessionListener.class
+com\jp\portal\servlet\LoginServlet.class
+com\jp\portal\servlet\AbstractRedirectServlet.class
+com\jp\portal\servlet\ListApplicationsServlet.class
+com\jp\portal\servlet\SessionAuditor.class
+com\jp\portal\servlet\LogoutServlet.class

@@ -1,0 +1,35 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.jp.wisdom.web</groupId>
+		<artifactId>jp-web-parent</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
+	<artifactId>jp-portal</artifactId>
+	<packaging>war</packaging>
+
+	<dependencies>
+
+		<dependency>
+			<groupId>${groupId}</groupId>
+			<artifactId>jp-portal-brand</artifactId>
+			<version>${version}</version>
+			<type>war</type>
+		</dependency>
+
+		<dependency>
+			<groupId>${groupId}</groupId>
+			<artifactId>jp-portal-listener</artifactId>
+			<version>${version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.jp.wisdom.apps</groupId>
+			<artifactId>jp-status-api</artifactId>
+			<version>${version}</version>
+		</dependency>
+
+
+	</dependencies>
+</project>

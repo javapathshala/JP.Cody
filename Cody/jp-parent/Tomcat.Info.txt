@@ -1,0 +1,8 @@
+# Tomcat  Https 
+
+alias - tomcat_https
+name - httpsStore
+location - ${catalina.base}/conf/cert/.httpsStore
+Port - 90/943
+
+

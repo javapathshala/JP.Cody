@@ -1,0 +1,5 @@
+com\jp\portal\listener\AbstractPortalDataHelper.class
+com\jp\portal\listener\PortalContextListener.class
+com\jp\portal\listener\PortalRegistration.class
+com\jp\portal\listener\PortalApplication.class
+com\jp\portal\listener\PortalBrandingFilter.class

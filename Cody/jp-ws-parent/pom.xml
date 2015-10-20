@@ -13,7 +13,7 @@
 	<name>WebService Parent POM</name>
 	<description>WebService Parent POM</description>
 	<modules>
-		<module>jp-ws-api</module>
+	<!-- 	<module>jp-ws-api</module>
 		<module>jp-ws-impl-one</module>
 		<module>jp-ws-impl-two</module>
 		<module>jp-ws-cxf</module>
@@ -21,14 +21,20 @@
 		<module>jp-ws-test</module>
 		<module>jp-ws-full-api</module>
 		<module>jp-ws-full-core</module>
-		<module>jp-ws-full</module>
+		<module>jp-ws-full</module> -->
+		
+		<module>jp-ws-payment-api</module>
+		<module>jp-ws-payment-cal</module>
+		<module>jp-ws-payment</module>
+		<module>jp-ws-payment-client</module>
+	<!-- 	<module>jp-ws-axis</module> -->
 	</modules>
 
-	<dependencies>
+	<!-- <dependencies>
 		<dependency>
 			<groupId>com.jp.wisdom.apps</groupId>
 			<artifactId>jp-status-api</artifactId>
 			<version>${version}</version>
 		</dependency>
-	</dependencies>
+	</dependencies> -->
 </project>

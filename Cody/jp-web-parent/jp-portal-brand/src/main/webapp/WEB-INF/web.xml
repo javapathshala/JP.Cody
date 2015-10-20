@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app id="WebApp_ID" version="3.0"
+	xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_3_0.xsd">
+	<!-- Display name below used by the Portal framework for the "Module heading" 
+		text in the Page Banner -->
+	<display-name>JavaPathshala Web User Interface Branding</display-name>
+
+	<!-- Common property definitions of all JSP pages and JSP page fragments 
+		in this web application -->
+	<jsp-config>
+		<jsp-property-group>
+			<url-pattern>*.jsp</url-pattern>
+			<url-pattern>*.jspf</url-pattern>
+			<page-encoding>UTF-8</page-encoding>
+			<trim-directive-whitespaces>true</trim-directive-whitespaces>
+		</jsp-property-group>
+	</jsp-config>
+
+	<!-- The common JP Portal standard response pages -->
+	<error-page>
+		<!-- Unauthorized -->
+		<error-code>401</error-code>
+		<location>/WEB-INF/branding/jsp/unauthorized.jsp</location>
+	</error-page>
+	<error-page>
+		<!-- Forbidden -->
+		<error-code>403</error-code>
+		<location>/WEB-INF/branding/jsp/forbidden.jsp</location>
+	</error-page>
+	<error-page>
+		<!-- Not Found -->
+		<error-code>404</error-code>
+		<location>/WEB-INF/branding/jsp/missing.jsp</location>
+	</error-page>
+	<error-page>
+		<!-- Internal Server Error -->
+		<location>/WEB-INF/branding/jsp/error.jsp</location>
+	</error-page>
+
+	<welcome-file-list>
+		<welcome-file>examples/example-bootstrap.jsp</welcome-file>
+	</welcome-file-list>
+</web-app>

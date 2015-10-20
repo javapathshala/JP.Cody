@@ -1,0 +1,20 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>com.jp.wisdom.web</groupId>
+    <artifactId>jp-web-parent</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+  </parent>
+  <artifactId>jp-portal-brand</artifactId>
+  <packaging>war</packaging>
+ <name>JP Web user-interface branding </name>
+    <description>An abstract web application containing all the common CSS, Java-script, and libraries used to create JP common look and feel.</description>
+  
+  <dependencies>
+   <dependency>
+            <groupId>${groupId}</groupId>
+            <artifactId>jp-portal-listener</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+  </dependencies>
+</project>

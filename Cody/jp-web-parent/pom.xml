@@ -13,9 +13,12 @@
 	<description>Web Parent POM</description>
 	<url>www.javapathshala.com</url>
 	<modules>
-		<module>jp-portal-listener</module>
+<!-- 		<module>jp-portal-listener</module>
 		<module>jp-portal-brand</module>
 		<module>jp-portal</module>
+		<module>jp-embed-tomcat</module> -->
+		<module>jp-spring-web</module>
+		<module>jp-spring-api</module>
 	</modules>
 
 	<dependencies>

@@ -1,0 +1,11 @@
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>${pageContext.servletContext.servletContextName}</title>
+<base href="${fn:replace(pageContext.request.requestURL, pageContext.request.requestURI, '')}${pageContext.request.contextPath}/" />
+<link rel="stylesheet" href="branding/common/css/bootstrap.min.css" type="text/css" media="all" />
+<link rel="stylesheet" href="branding/common/css/font-awesome.min.css" type="text/css" media="all" />
+<link rel="stylesheet" href="branding/common/css/layout.css" type="text/css" media="all" />
+<link rel="stylesheet" href="branding/themes/${sessionScope['branding']}/branding.css" type="text/css" media="all" />
+<link rel="icon" href="branding/themes/${sessionScope['branding']}/images/favicon.ico" />
+<link rel="shortcut icon" href="branding/themes/${sessionScope['branding']}/images/favicon.ico" />

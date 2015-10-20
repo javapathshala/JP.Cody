@@ -1,0 +1,13 @@
+.navbar-default { background-color: #fff; }
+.navbar-default .navbar-nav > li > a { color: #428bca; }
+
+#banner { background-image: url('images/bg.png'); }
+#banner h3 { color: #fff; }
+
+.container.border {  border-bottom: 1px solid #ddd; border-left: 1px solid #ddd; border-right: 1px solid #ddd; }
+
+/* Helper classes */
+.required:after { color: #cd3333; }
+
+/* system activity overlay */
+.overlayDiv { background: #aaa; }

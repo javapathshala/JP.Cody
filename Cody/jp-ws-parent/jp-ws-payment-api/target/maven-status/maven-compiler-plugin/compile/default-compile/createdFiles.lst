@@ -1,0 +1,5 @@
+com\jp\ws\payment\api\response\PaymentResponse.class
+com\jp\ws\payment\api\response\AbstractResponse.class
+com\jp\ws\payment\api\PaymentService.class
+com\jp\ws\payment\api\response\ResponseReason.class
+com\jp\ws\payment\api\response\ResponseStatus.class
