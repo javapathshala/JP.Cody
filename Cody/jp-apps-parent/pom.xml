@@ -15,6 +15,7 @@
   	<module>jp-status-api</module>
   	<module>jp-gui</module>
   	<module>jp-cluster</module>
+  	<module>jp-nosql</module>
   </modules>
   <dependencies>
   <dependency>
