@@ -1,9 +1,0 @@
-com\jp\ws\payment\IPValidator.class
-com\jp\ws\payment\interceptors\UserInfoInterceptor.class
-com\jp\ws\payment\wss4j\ServerPasswordCallback.class
-com\jp\ws\payment\interceptors\HeaderInfoInterceptor.class
-com\jp\ws\payment\exceptions\ServiceException.class
-com\jp\ws\payment\EnterprisePaymentService.class
-com\jp\ws\payment\interceptors\HttpHeaderInterceptor.class
-com\jp\ws\payment\interceptors\IPValidatingInterceptor.class
-com\jp\ws\payment\exceptions\ServiceExceptionDetails.class
