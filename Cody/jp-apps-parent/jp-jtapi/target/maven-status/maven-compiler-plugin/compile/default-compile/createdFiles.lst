@@ -1,3 +1,5 @@
-com\jp\jtapi\JTapiConnection$TestAddressListener.class
-com\jp\jtapi\JTapiConnection.class
-com\jp\jtapi\JTapiConnection$1.class
+com\jp\jtapi\JTapiOperations.class
+com\jp\jtapi\provider\JTapiConnection$1.class
+com\jp\jtapi\provider\ConnectionProvider.class
+com\jp\jtapi\provider\JTapiConnection.class
+com\jp\jtapi\provider\JTapiConnection$TestAddressListener.class
