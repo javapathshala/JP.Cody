@@ -16,6 +16,7 @@
   	<module>jp-gui</module>
   	<module>jp-cluster</module>
   	<module>jp-nosql</module>
+  	<module>jp-memcache</module>
   </modules>
   <dependencies>
   <dependency>
