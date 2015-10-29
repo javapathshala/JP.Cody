@@ -13,7 +13,8 @@
 	<description>Core Apps Parent POM</description>
 	<modules>
 		<module>jp-core-hibernate</module>
-		<!-- <module>jp-core</module> -->
-		<!-- <module>jp-core-patterns</module> <module>jp-core-threads</module> -->
+		<module>jp-core</module>
+		<module>jp-core-patterns</module>
+		<module>jp-core-threads</module>
 	</modules>
 </project>
