@@ -20,4 +20,12 @@ http://www.springframework.org/schema/aop http://www.springframework.org/schema/
 	<bean id="shapeService" class="com.jp.spring.api.aop.basic.ShapeService" autowire="byName" />
 
 	<bean name="LoggingAspect" class="com.jp.spring.api.aop.basic.LoggingAspect" />
+	
+	<!--  Logging Example -->
+	<bean id="exampleBean" class="com.jp.spring.api.aop.logging.ExampleBean">
+		<constructor-arg value="A Logging Example" />
+		<constructor-arg value="1.0" />
+	</bean>
+	
+	<bean name="AspectForLogging" class="com.jp.spring.api.aop.logging.AspectForLogging" />
 </beans>
