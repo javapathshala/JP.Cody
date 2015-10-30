@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+
+	<!-- Example 1 -->
+	<bean id="triangle" class="  com.jp.spring.api.depend.simple.Triangle">
+		<property name="type" value="Equivalent" />
+		<constructor-arg type="String" value="red" index="1" />
+		<constructor-arg type="int" value="12" index="0" />
+	</bean>
+	<alias name="triangle" alias="triangle-alias" />
+
+	<!-- Example 2 -->
+	<bean id="triangle2" class="com.jp.spring.api.depend.complex.Triangle">
+
+		<property name="pointA" ref="zeroPoint"></property>
+		<!-- inner bean - will be used by traingle2 only -->
+		<property name="pointB">
+			<bean class="com.jp.spring.api.depend.complex.Point">
+				<property name="xPoint" value="-40"></property>
+				<property name="yPoint" value="80"></property>
+			</bean>
+		</property>
+		<property name="pointC" ref="twoPoint"></property>
+		<!-- List ref -->
+		<property name="listTag">
+			<list>
+				<ref bean="twoPoint" />
+				<ref bean="zeroPoint" />
+			</list>
+		</property>
+	</bean>
+
+	<bean id="zeroPoint" class="com.jp.spring.api.depend.complex.Point">
+		<property name="xPoint" value="0"></property>
+		<property name="yPoint" value="0"></property>
+	</bean>
+
+	<bean id="twoPoint" class="com.jp.spring.api.depend.complex.Point">
+		<property name="xPoint" value="20"></property>
+		<property name="yPoint" value="0"></property>
+	</bean>
+
+	<!-- Example 3 -->
+	<alias name="triangle2" alias="triangle-alias" />
+
+	<!-- Example 4 -->
+	<bean id="triangleAutoWire" class="com.jp.spring.api.depend.complex.Triangle" autowire="byName" />
+
+	<bean id="autoWireA" class="com.jp.spring.api.depend.complex.Point">
+		<property name="xPoint" value="100"></property>
+		<property name="yPoint" value="200"></property>
+	</bean>
+
+	<bean id="autoWireB" class="com.jp.spring.api.depend.complex.Point">
+		<property name="xPoint" value="300"></property>
+		<property name="yPoint" value="400"></property>
+	</bean>
+
+	<bean id="autoWireC" class="com.jp.spring.api.depend.complex.Point">
+		<property name="xPoint" value="500"></property>
+		<property name="yPoint" value="600"></property>
+	</bean>
+
+</beans>

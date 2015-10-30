@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+
+	<!-- Example 1 -->
+	<bean id="triangle" class="com.jp.spring.api.depend.annotations.Triangle">
+		<property name="pointA" ref="center"></property>
+		<property name="pointB" ref="pointB"></property>
+		<property name="pointC" ref="pointC"></property>
+	</bean>
+
+	<bean id="center" class="com.jp.spring.api.depend.annotations.Point">
+		<property name="xPoint" value="15"></property>
+		<property name="yPoint" value="45"></property>
+	</bean>
+
+	<bean id="pointB" class="com.jp.spring.api.depend.annotations.Point">
+		<property name="xPoint" value="0"></property>
+		<property name="yPoint" value="0"></property>
+	</bean>
+
+	<bean id="pointC" class="com.jp.spring.api.depend.annotations.Point">
+		<property name="xPoint" value="20"></property>
+		<property name="yPoint" value="0"></property>
+	</bean>
+
+	<bean id="circle" class="com.jp.spring.api.depend.annotations.Circle">
+	
+	</bean>
+<!-- bean class="org.springframework.beans.factory.annotation.RequiredAnnotationBeanPostProcessor" /-->
+
+<!-- For autowired -->
+<bean class="org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor" />
+</beans>
