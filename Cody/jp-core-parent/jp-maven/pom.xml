@@ -39,6 +39,14 @@
 									<mainClass>com.jp.maven.test</mainClass>
 								</transformer>
 							</transformers>
+							<artifactSet>
+								<excludes>
+									<exclude>org.slf4j:slf4j-api</exclude>
+									<exclude>org.slf4j:log4j-over-slf4j</exclude>
+									<exclude>ch.qos.logback:logback-classic</exclude>
+									<exclude>ch.qos.logback:logback-core</exclude>
+								</excludes>
+							</artifactSet>
 						</configuration>
 					</execution>
 				</executions>
