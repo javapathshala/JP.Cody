@@ -12,7 +12,7 @@
  * 
  * Visit us at www.javapathshala.com
  */
-package com.jp.file.operations;
+package com.jp.serial;
 
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
