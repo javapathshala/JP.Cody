@@ -11,7 +11,7 @@
  * and to prosecute the authors of any infraction.
  * Visit us at www.javapathshala.com
  */
-package com.jp.core.cache;
+package com.jp.cache.collection;
 
 import java.util.ArrayList;
 import java.util.Collection;
