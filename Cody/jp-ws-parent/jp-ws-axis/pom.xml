@@ -7,7 +7,7 @@
 		<version>1.0.0-SNAPSHOT</version>
 	</parent>
 	<artifactId>jp-ws-axis</artifactId>
-	<packaging>aar</packaging>
+	<!-- <packaging>aar</packaging> -->
 	<name>JP Axis 2 Service</name>
 	<description>JP Axis 2 Service</description>
 
