@@ -4,7 +4,7 @@
 	<parent>
 		<groupId>com.jp.wisdom.ws</groupId>
 		<artifactId>jp-ws-parent</artifactId>
-		<version>0.0.1-SNAPSHOT</version>
+		<version>1.0.0-SNAPSHOT</version>
 	</parent>
 	<artifactId>jp-ws-client</artifactId>
 	<name>WS Client</name>
@@ -28,7 +28,7 @@
 									<artifactId>jp-ws-cxf</artifactId>
 									<version>${project.version}</version>
 								</wsdlArtifact>
-								<wsdlLocation>classpath:jp-ws-cxf-0.0.1-SNAPSHOT.wsdl</wsdlLocation>
+								<wsdlLocation>classpath:jp-ws-cxf-1.0.0-SNAPSHOT.wsdl</wsdlLocation>
 							</wsdlOption>
 						</wsdlOptions>
 					</configuration>

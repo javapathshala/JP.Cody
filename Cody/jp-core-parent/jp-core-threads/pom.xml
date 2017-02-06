@@ -3,7 +3,7 @@
   <parent>
     <groupId>com.jp.wisdom.core</groupId>
     <artifactId>jp-core-parent</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0.0-SNAPSHOT</version>
   </parent>
   <artifactId>jp-core-threads</artifactId>
   <name>JP Threads</name>

@@ -4,10 +4,10 @@
         <wb-resource deploy-path="/" source-path="/src/main/webapp" tag="defaultRootSource"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/java"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/resources"/>
-        <dependent-module archiveName="jp-ws-payment-api-0.0.1-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/jp-ws-payment-api/jp-ws-payment-api">
+        <dependent-module archiveName="jp-ws-payment-api-1.0.0-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/jp-ws-payment-api/jp-ws-payment-api">
             <dependency-type>uses</dependency-type>
         </dependent-module>
-        <dependent-module archiveName="jp-ws-payment-cal-0.0.1-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/jp-ws-payment-cal/jp-ws-payment-cal">
+        <dependent-module archiveName="jp-ws-payment-cal-1.0.0-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/jp-ws-payment-cal/jp-ws-payment-cal">
             <dependency-type>uses</dependency-type>
         </dependent-module>
         <property name="context-root" value="jp-ws-payment"/>

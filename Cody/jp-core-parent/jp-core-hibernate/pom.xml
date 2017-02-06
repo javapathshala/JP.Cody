@@ -4,7 +4,7 @@
 	<parent>
 		<groupId>com.jp.wisdom.core</groupId>
 		<artifactId>jp-core-parent</artifactId>
-		<version>0.0.1-SNAPSHOT</version>
+		<version>1.0.0-SNAPSHOT</version>
 	</parent>
 	<artifactId>jp-core-hibernate</artifactId>
 	<name>Hibernate Examples</name>

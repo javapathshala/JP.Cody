@@ -4,7 +4,7 @@
 	<parent>
 		<groupId>com.jp.wisdom.web</groupId>
 		<artifactId>jp-web-parent</artifactId>
-		<version>0.0.1-SNAPSHOT</version>
+		<version>1.0.0-SNAPSHOT</version>
 	</parent>
 	<artifactId>jp-spring-web</artifactId>
 	<packaging>war</packaging>
@@ -15,7 +15,7 @@
 		<dependency>
 			<groupId>com.jp.wisdom.web</groupId>
 			<artifactId>jp-spring-api</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
+			<version>1.0.0-SNAPSHOT</version>
 		</dependency>
 	</dependencies>
 </project>
