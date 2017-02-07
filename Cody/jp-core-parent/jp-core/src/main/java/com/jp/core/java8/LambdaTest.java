@@ -16,44 +16,43 @@ package com.jp.core.java8;
 import java.util.List;
 
 /**
- * 
- * 
+ *
+ *
  * @author Dimit Chadha
  *
  */
 public class LambdaTest {
 
-	/**
-	 * @param args
-	 */
-	public static void main(String[] args) {
+    /**
+     * @param args
+     */
+    public static void main(String[] args) {
 
-		LambdaTest lambdaTest = new LambdaTest();
-		lambdaTest.withOutLambda(new TestIfc() {
+        LambdaTest lambdaTest = new LambdaTest();
+        lambdaTest.withOutLambda(new TestIfc() {
 
-			@Override
-			public boolean isGood(int value) {
-				return value == 42;
-			}
-		});
+            @Override
+            public boolean isGood(int value) {
+                return value == 42;
+            }
+        });
 
-		lambdaTest.withOutLambda(answer -> answer > 42);
+        lambdaTest.withOutLambda(answer -> answer > 42);
 
-	}
+    }
 
-	/**
-	 * @param testIfc 
-	 * 
-	 */
-	private void withOutLambda(TestIfc testIfc) {
-		System.out.println(testIfc.isGood(45));
+    /**
+     * @param testIfc
+     *
+     */
+    private void withOutLambda(TestIfc testIfc) {
+        System.out.println(testIfc.isGood(45));
 
-	}
-
+    }
 
 }
 
 interface TestIfc {
 
-	public boolean isGood(int value);
+    public boolean isGood(int value);
 }
