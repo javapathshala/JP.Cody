@@ -1,0 +1,31 @@
+/*
+ * File: Line.java Date: 22-Aug-2013 This source code is part of Java
+ * Pathshala-Wisdom Being Shared. This program is protected by copyright law but
+ * you are authorise to learn & gain ideas from it. Its unauthorised use is
+ * explicitly prohibited & any addition & removal of material. If want to
+ * suggest any changes, you are welcome to provide your comments on GitHub
+ * Social Code Area. Its unauthorised use gives Java Pathshala the right to
+ * obtain retention orders and to prosecute the authors of any infraction. Visit
+ * us at www.javapathshala.com
+ */
+package com.jp.patterns.structure.flyweight;
+
+/**
+ * @author dchadha
+ */
+public class Line implements LineFlyweight {
+
+	private Color color;
+
+	public Line(Color c) {
+		color = c;
+	}
+
+	public Color getColor() {
+		return color;
+	}
+
+	public void draw(Point location) {
+		System.out.println("Line Drawn with " + getColor() + " Color at Location " + location);
+	}
+}
