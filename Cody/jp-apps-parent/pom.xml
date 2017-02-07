@@ -1,29 +1,29 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <parent>
-    <groupId>com.jp.wisdom</groupId>
-    <artifactId>jp-parent</artifactId>
-    <version>1.0.0-SNAPSHOT</version>
-  </parent>
-   <groupId>com.jp.wisdom.apps</groupId>
-  <artifactId>jp-apps-parent</artifactId>
-  <packaging>pom</packaging>
-  <name>Apps Parent</name>
-  <description>Apps Parent</description>
-  <modules>
-  	<module>jp-jtapi</module>
-  	<module>jp-status-api</module>
-  	<module>jp-gui</module>
-  	<module>jp-cluster</module>
-  	<module>jp-nosql</module>
-  	<module>jp-memcache</module>
-  </modules>
-  <dependencies>
-  <dependency>
-			<groupId>ch.qos.logback</groupId>
-			<artifactId>logback-classic</artifactId>
-			<version>1.1.2</version>
-			<scope>runtime</scope>
-		</dependency>
-  </dependencies>
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.jp.wisdom</groupId>
+        <artifactId>jp-parent</artifactId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+    <groupId>com.jp.wisdom.apps</groupId>
+    <artifactId>jp-apps-parent</artifactId>
+    <packaging>pom</packaging>
+    <name>Apps Parent</name>
+    <description>Apps Parent</description>
+    <modules>
+        <module>jp-jtapi</module>
+        <module>jp-status-api</module>
+        <module>jp-gui</module>
+        <module>jp-cluster</module>
+        <module>jp-nosql</module>
+        <module>jp-memcache</module>
+    </modules>
+    <dependencies>
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+            <version>1.1.2</version>
+            <scope>runtime</scope>
+        </dependency>
+    </dependencies>
 </project>

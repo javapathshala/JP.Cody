@@ -14,51 +14,60 @@
 package com.jp.cache.ehcache;
 
 //import net.sf.ehcache.Cache;
-//import net.sf.ehcache.CacheManager;
-//import net.sf.ehcache.Element;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.InputStream;
+import net.sf.ehcache.Cache;
+import net.sf.ehcache.CacheManager;
+import net.sf.ehcache.Element;
 
 /**
- * 
- * 
+ *
+ *
  * @author Dimit Chadha
  *
  */
-public class JPCaching {//implements JPCache {
+public class JPCaching implements JPCache
+{
 
-//	private static CacheManager manager;
+    private static CacheManager manager;
 
-	/**
-	 * @param args
-	 */
-	public static void main(String[] args) {
+    /**
+     * @param args
+     */
+    public static void main(String[] args) throws FileNotFoundException
+    {
 
-//		manager = CacheManager.newInstance("src/main/java/com/jp/core/cache/ehcache/ehcache.xml");
-//
-//		String[] cacheNames = CacheManager.getInstance().getCacheNames();
-//		System.out.println("Cache Avaliable are --> " + cacheNames.toString());
-//		JPCaching jpcache = new JPCaching();
-//
-//		System.out.println("Pushing System of Records to cache");
-//		jpcache.store("demo", "key1", "value1");
-//		jpcache.store("demo", "key2", "value2");
-//		jpcache.store("demo", "key3", "value3");
-//
-//		System.out.println("Reading from cache for Key - " + jpcache.find("demo", "key3"));
-//		manager.shutdown();
-	}
+        manager = CacheManager.newInstance("src\\main\\java\\com\\jp\\cache\\ehcache\\ehcache.xml");
 
-//	@Override
-	public void store(String cacheName, String key, String value) {
-//		Cache testCache = manager.getCache(cacheName);
-//		testCache.putIfAbsent(new Element(key, value));
-	}
+        String[] cacheNames = CacheManager.getInstance().getCacheNames();
+        System.out.println("Cache Avaliable are --> " + cacheNames.toString());
+        JPCaching jpcache = new JPCaching();
 
-	//@Override
-//	public Object find(String cacheName, String key) {
-//		Cache cache = manager.getCache(cacheName);
-//		System.out.println("Total elements in cache -->" + cache.getSize());
-//		Element element = cache.get(key);
-//		return element != null ? element.getObjectValue() : "No Value found in cache";
-//	}
+        System.out.println("Pushing System of Records to cache");
+        jpcache.store("demo", "key1", "value1");
+        jpcache.store("demo", "key2", "value2");
+        jpcache.store("demo", "key3", "value3");
+
+        System.out.println("Reading from cache for Key - " + jpcache.find("demo", "key3"));
+        manager.shutdown();
+    }
+
+    @Override
+    public void store(String cacheName, String key, String value)
+    {
+        Cache testCache = manager.getCache(cacheName);
+        testCache.putIfAbsent(new Element(key, value));
+    }
+
+    @Override
+    public Object find(String cacheName, String key)
+    {
+        Cache cache = manager.getCache(cacheName);
+        System.out.println("Total elements in cache -->" + cache.getSize());
+        Element element = cache.get(key);
+        return element != null ? element.getObjectValue() : "No Value found in cache";
+    }
 
 }
