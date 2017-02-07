@@ -14,8 +14,9 @@
 	<modules>
 		<module>jp-core</module>
 		<module>jp-core-threads</module>
-		<!-- <module>jp-core-hibernate</module>
-		<module>jp-core-patterns</module>
+                		<module>jp-core-patterns</module>
+<!--		 <module>jp-core-hibernate</module>
+
 		
         <module>jp-maven</module>
         <module>jp-maven-plugins</module> -->
