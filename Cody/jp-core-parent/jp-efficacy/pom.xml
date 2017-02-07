@@ -30,5 +30,6 @@
         <module>exceptions</module>
         <module>phonie</module>
         <module>wsinfo</module>
+        <module>finance</module>
     </modules>
 </project>
