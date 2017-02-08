@@ -1,53 +1,53 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-	<modelVersion>4.0.0</modelVersion>
-	<parent>
-		<groupId>com.jp.wisdom.ws</groupId>
-		<artifactId>jp-ws-parent</artifactId>
-		<version>1.0.0-SNAPSHOT</version>
-	</parent>
-	<artifactId>jp-ws-axis</artifactId>
-	<!-- <packaging>aar</packaging> -->
-	<name>JP Axis 2 Service</name>
-	<description>JP Axis 2 Service</description>
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.jp.wisdom.ws</groupId>
+        <artifactId>jp-ws-parent</artifactId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+    <artifactId>jp-ws-axis</artifactId>
+    <!-- <packaging>aar</packaging> -->
+    <name>JP Axis 2 Service</name>
+    <description>JP Axis 2 Service</description>
 
-	<properties>
-		<axis2.version>1.6.2</axis2.version>
-	</properties>
+    <properties>
+        <axis2.version>1.6.2</axis2.version>
+    </properties>
 
 
-	<dependencies>
+    <dependencies>
 
-		<!-- AXIS 2 -->
-		<dependency>
-			<groupId>org.apache.axis2</groupId>
-			<artifactId>axis2</artifactId>
-			<version>${axis2.version}</version>
-		</dependency>
-		<!-- <dependency>
-			<groupId>org.apache.axis2</groupId>
-			<artifactId>axis2-transport-http</artifactId>
-			<version>${axis2.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.axis2</groupId>
-			<artifactId>axis2-transport-local</artifactId>
-			<version>${axis2.version}</version>
-		</dependency> -->
+        <!-- AXIS 2 -->
+        <dependency>
+            <groupId>org.apache.axis2</groupId>
+            <artifactId>axis2</artifactId>
+            <version>${axis2.version}</version>
+        </dependency>
+        <!-- <dependency>
+                <groupId>org.apache.axis2</groupId>
+                <artifactId>axis2-transport-http</artifactId>
+                <version>${axis2.version}</version>
+        </dependency>
+        <dependency>
+                <groupId>org.apache.axis2</groupId>
+                <artifactId>axis2-transport-local</artifactId>
+                <version>${axis2.version}</version>
+        </dependency> -->
 		
-	</dependencies>
+    </dependencies>
 	
-	<build>
-<plugins>
-  <plugin>
-    <groupId>org.apache.axis2</groupId>
-    <artifactId>axis2-aar-maven-plugin</artifactId>
-    <version>${axis2.version}</version>
-    <extensions>true</extensions>
-    <configuration>
-      <aarName>com.jp.ws.axis.service</aarName>
-    </configuration>
-  </plugin>
-</plugins>
-</build>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.axis2</groupId>
+                <artifactId>axis2-aar-maven-plugin</artifactId>
+                <version>${axis2.version}</version>
+                <extensions>true</extensions>
+                <configuration>
+                    <aarName>com.jp.ws.axis.service</aarName>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 </project>

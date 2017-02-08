@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- Default CXF XML -->
+	<import resource="classpath:META-INF/cxf/cxf.xml" />
+
+	<import resource="classpath:com/jp/ws/context/webapp/jp-ws-beans.xml" />
+	
+        <!--SOAP WS-->
+        <import resource="classpath:com/jp/ws/context/webapp/ws-endpoint.xml" />
+
+        <!--REST WS-->
+        <!--<import resource="classpath:com/jp/ws/context/webapp/rs-endpoint.xml" />-->
+</beans>

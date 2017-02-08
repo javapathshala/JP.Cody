@@ -3,23 +3,28 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>com.jp.wisdom.ws</groupId>
-        <artifactId>jp-ws-parent</artifactId>
+        <artifactId>jp-ws-cxf-parent</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>
-    <artifactId>jp-ws-full</artifactId>
-    <name>Maths Cache Web Service</name>
-    <description>Maths Cache Web Service</description>
+    <artifactId>jp-ws-cxf</artifactId>
+    <name>CXF Web Service</name>
+    <description>CXF Web Service</description>
     <packaging>war</packaging>
 
     <dependencies>
         <dependency>
             <groupId>${project.groupId}</groupId>
-            <artifactId>jp-ws-full-api</artifactId>
+            <artifactId>jp-ws-api</artifactId>
             <version>${project.version}</version>
         </dependency>
         <dependency>
             <groupId>${project.groupId}</groupId>
-            <artifactId>jp-ws-full-core</artifactId>
+            <artifactId>jp-ws-impl-one</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>jp-ws-impl-two</artifactId>
             <version>${project.version}</version>
         </dependency>
 		
@@ -42,6 +47,8 @@
             <artifactId>spring-core</artifactId>
             <version>${version.org.springframework}</version>
             <scope>runtime</scope>
+            <!-- <exclusions> <exclusion> <groupId>commons-logging</groupId> <artifactId>commons-logging</artifactId> 
+            </exclusion> </exclusions> -->
         </dependency>
         <dependency>
             <groupId>org.springframework</groupId>
@@ -61,7 +68,7 @@
                     <version>${version.org.apache.cxf}</version>
                     <configuration>
                         <attachWsdl>true</attachWsdl>
-                        <className>com.jp.ws.full.EnterpriseCacheMathService</className>
+                        <className>com.jp.ws.cxf.EnterpriseMathService</className>
                         <genWsdl>true</genWsdl>
                         <soap12>true</soap12>
                     </configuration>
