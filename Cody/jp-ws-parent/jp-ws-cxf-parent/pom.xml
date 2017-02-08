@@ -10,9 +10,10 @@
     <packaging>pom</packaging>
      <name>CXF WS Parent</name>
     <modules>
+        <module>jp-ws-cxf-api</module>
+        <module>jp-ws-cxf-impl-one</module>
+        <module>jp-ws-cxf-impl-two</module>
         <module>jp-ws-cxf</module>
-        <module>jp-ws-api</module>
-        <module>jp-ws-impl-one</module>
-        <module>jp-ws-impl-two</module>
+        <module>jp-ws-cxf-client</module>
     </modules>
 </project>
