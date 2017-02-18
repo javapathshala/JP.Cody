@@ -17,10 +17,10 @@ import org.slf4j.LoggerFactory;
 
 import com.hazelcast.core.HazelcastInstance;
 import com.hazelcast.core.IMap;
+import com.jp.efficacy.ws.ResponseReason;
+import com.jp.efficacy.ws.ResponseStatus;
 import com.jp.ws.api.MathService;
 import com.jp.ws.api.response.MathResponse;
-import com.jp.ws.api.response.ResponseReason;
-import com.jp.ws.api.response.ResponseStatus;
 
 /**
  * @author Dimit Chadha

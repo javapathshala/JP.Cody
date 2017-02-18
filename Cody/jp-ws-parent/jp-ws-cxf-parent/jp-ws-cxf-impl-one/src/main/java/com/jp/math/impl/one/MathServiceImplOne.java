@@ -10,12 +10,12 @@
  */
 package com.jp.math.impl.one;
 
+import com.jp.efficacy.ws.ResponseReason;
+import com.jp.efficacy.ws.ResponseStatus;
 import java.util.List;
 
 import com.jp.ws.api.MathService;
 import com.jp.ws.api.response.MathResponse;
-import com.jp.ws.api.response.ResponseReason;
-import com.jp.ws.api.response.ResponseStatus;
 
 /**
  * @author Dimit Chadha
@@ -31,7 +31,7 @@ public class MathServiceImplOne implements MathService
         {
             sum += num;
         }
-        return new MathResponse(ResponseStatus.SUCCESS, ResponseReason.OK, sum + "");
+        return new MathResponse(ResponseStatus.SUCCESS, ResponseReason.OK, "Sum is " + sum, String.valueOf(sum));
     }
 
     @Override

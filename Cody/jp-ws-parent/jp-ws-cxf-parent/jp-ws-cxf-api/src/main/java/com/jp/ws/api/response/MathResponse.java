@@ -10,39 +10,49 @@
  */
 package com.jp.ws.api.response;
 
+import com.jp.efficacy.ws.AbstractResponse;
+import com.jp.efficacy.ws.ResponseReason;
+import com.jp.efficacy.ws.ResponseStatus;
+
 /**
  * @author Dimit Chadha
  */
-public class MathResponse extends AbstractResponse {
+public class MathResponse extends AbstractResponse
+{
 
-	private String answer;
+    private String answer;
 
-	public MathResponse() {
-		super();
-	}
+    public MathResponse()
+    {
+        super();
+    }
 
-	public MathResponse(ResponseStatus status, ResponseReason reason, String answer) {
-		this(status, reason, null, answer);
-	}
+    public MathResponse(ResponseStatus status, ResponseReason reason, String answer)
+    {
+        this(status, reason, null, answer);
+    }
 
-	public MathResponse(ResponseStatus status, ResponseReason reason, String message, String answer) {
-		super(status, reason, message);
-		this.answer = answer;
-	}
+    public MathResponse(ResponseStatus status, ResponseReason reason, String message, String answer)
+    {
+        super(status, reason, message);
+        this.answer = answer;
+    }
 
-	/**
-	 * @return the answer
-	 */
-	public String getAnswer() {
-		return answer;
-	}
+    /**
+     * @return the answer
+     */
+    public String getAnswer()
+    {
+        return answer;
+    }
 
-	/**
-	 * @param answer
-	 *            the answer to set
-	 */
-	public void setAnswer(String answer) {
-		this.answer = answer;
-	}
+    /**
+     * @param answer
+     *               the answer to set
+     */
+    public void setAnswer(String answer)
+    {
+        this.answer = answer;
+    }
 
 }
