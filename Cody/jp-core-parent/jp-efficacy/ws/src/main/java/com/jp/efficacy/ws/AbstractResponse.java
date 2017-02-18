@@ -57,7 +57,7 @@ public abstract class AbstractResponse implements Serializable
      */
     public AbstractResponse(ResponseStatus responseStatus, ResponseReason responseReason)
     {
-        this.responseReason = responseReason;
+        this.responseStatus = responseStatus;
         this.responseReason = responseReason;
     }
 
