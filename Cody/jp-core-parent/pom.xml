@@ -20,5 +20,6 @@
 		
         <module>jp-maven</module>
         <module>jp-maven-plugins</module> -->
-    </modules>
+	 <module>jp-efficacy</module>
+	</modules>
 </project>
