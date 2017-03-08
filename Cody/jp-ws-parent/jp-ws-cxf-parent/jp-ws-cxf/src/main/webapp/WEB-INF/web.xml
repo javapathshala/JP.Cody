@@ -1,27 +1,57 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app xmlns="http://java.sun.com/xml/ns/javaee" version="3.0"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
 
 
-	<context-param>
-		<param-name>contextConfigLocation</param-name>
-		<param-value>classpath:com/jp/ws/context/jp-ws-webapp.xml</param-value>
-	</context-param>
+    <context-param>
+        <param-name>contextConfigLocation</param-name>
+        <param-value>classpath:com/jp/ws/context/jp-ws-webapp.xml</param-value>
+    </context-param>
 
-	<listener>
-		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
-	</listener>
-	<servlet>
-		<servlet-name>CXFServlet</servlet-name>
-		<servlet-class>org.apache.cxf.transport.servlet.CXFServlet</servlet-class>
-		<load-on-startup>1</load-on-startup>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>CXFServlet</servlet-name>
-		<url-pattern>/svc/*</url-pattern>
-	</servlet-mapping>
-<!--	<welcome-file-list>
-		<welcome-file>status</welcome-file>
-	</welcome-file-list>-->
+    <listener>
+        <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+    </listener>
+    <servlet>
+        <servlet-name>CXFServlet</servlet-name>
+        <servlet-class>org.apache.cxf.transport.servlet.CXFServlet</servlet-class>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CXFServlet</servlet-name>
+        <url-pattern>/svc/*</url-pattern>
+    </servlet-mapping>
+    
+    <!-- This section introduces BASIC HTTP/HTTPS authentication to Web service -->
+    <security-role>
+        <description>Web Service Consumer</description>
+        <role-name>ws_role</role-name>
+    </security-role>
+
+    <security-constraint>
+        <web-resource-collection>
+            <web-resource-name>Operator Roles Security</web-resource-name>
+            <url-pattern>/svc/*</url-pattern>
+        </web-resource-collection>
+
+        <auth-constraint>
+            <!-- Define this role name in tomcat -->
+            <role-name>ws_role</role-name>
+        </auth-constraint>
+        <user-data-constraint>
+            <transport-guarantee>NONE</transport-guarantee>
+        </user-data-constraint>
+    </security-constraint>
+
+    <login-config>
+        <auth-method>BASIC</auth-method>
+        <realm-name>default</realm-name>
+    </login-config>
+    <!-- Authentication Ends -->
+    
+    <!-- Welcome Page-->
+<!--    <welcome-file-list>
+        <welcome-file>/svc/*</welcome-file>
+    </welcome-file-list>-->
+    
 </web-app>

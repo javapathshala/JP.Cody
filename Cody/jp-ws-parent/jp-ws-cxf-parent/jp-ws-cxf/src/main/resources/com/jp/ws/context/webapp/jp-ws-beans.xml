@@ -32,5 +32,12 @@
         <property name="inquiryDelegate" ref="inquiryDelegate" />
         <property name="storageDelegate" ref="storageDelegate" />
     </bean>
+    
+    
+    
+    <!-- Addressing Interceptors-->
+<!--    <bean id="mapAggregator" class="org.apache.cxf.ws.addressing.MAPAggregator"/>
+    <bean id="mapCodec" class="org.apache.cxf.ws.addressing.soap.MAPCodec"/>-->
+
 
 </beans>

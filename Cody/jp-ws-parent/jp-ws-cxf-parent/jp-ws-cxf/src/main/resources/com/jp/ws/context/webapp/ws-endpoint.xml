@@ -2,6 +2,7 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:jaxws="http://cxf.apache.org/jaxws" xmlns:soap="http://cxf.apache.org/bindings/soap"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:wsa="http://cxf.apache.org/ws/addressing"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
                            http://cxf.apache.org/jaxws http://cxf.apache.org/schemas/jaxws.xsd
                            http://cxf.apache.org/bindings/soap http://cxf.apache.org/schemas/configuration/soap.xsd">
@@ -16,5 +17,34 @@
         <jaxws:properties>
             <entry key="schema-validation-enabled" value="IN" />
         </jaxws:properties>
+        <jaxws:inInterceptors>
+            <ref bean="loggingInInterceptor" />
+        </jaxws:inInterceptors>
+        <jaxws:outInterceptors>
+            <ref bean="loggingOutInterceptor" />
+        </jaxws:outInterceptors>
+        
+        
+        <!--        <jaxws:features>
+            <wsa:addressing  addressingRequired="true" allowDuplicates="true"/>
+        </jaxws:features>-->
+        <!--        <jaxws:inInterceptors>
+            <ref bean="mapAggregator"/>
+            <ref bean="mapCodec"/>
+        </jaxws:inInterceptors>
+        <jaxws:outInterceptors>
+            <ref bean="mapAggregator"/>
+            <ref bean="mapCodec"/>
+        </jaxws:outInterceptors>
+        <jaxws:inFaultInterceptors>
+            <ref bean="mapAggregator"/>
+            <ref bean="mapCodec"/>
+        </jaxws:inFaultInterceptors>
+        <jaxws:outFaultInterceptors>
+            <ref bean="mapAggregator"/>
+            <ref bean="mapCodec"/>
+        </jaxws:outFaultInterceptors>-->
+        
+       
     </jaxws:endpoint>
 </beans>

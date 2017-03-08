@@ -20,12 +20,13 @@ import com.jp.ws.api.InquiryService;
 import com.jp.ws.api.MathService;
 import com.jp.ws.api.StorageService;
 import com.jp.ws.api.response.MathResponse;
+import javax.xml.ws.soap.Addressing;
 
 /**
  * @author Dimit Chadha
  */
 @WebService(serviceName = "MathService", portName = "MathPort", name = "MathEndPoint", targetNamespace = "http://jp.com/math/ws")
-// http://localhost:8080/jp-ws-cxf/svc/ws/Math?wsdl
+//@Addressing(enabled = true, required = true)
 public class EnterpriseMathService implements MathService
 {
 
