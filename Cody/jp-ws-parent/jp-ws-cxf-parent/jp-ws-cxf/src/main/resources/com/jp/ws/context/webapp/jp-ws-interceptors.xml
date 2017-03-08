@@ -17,5 +17,20 @@
     <bean id="loggingInInterceptor" class="org.apache.cxf.interceptor.LoggingInInterceptor" parent="abstractLoggingInterceptor"/>
     <bean id="loggingOutInterceptor" class="org.apache.cxf.interceptor.LoggingOutInterceptor" parent="abstractLoggingInterceptor"/>
     
+    <!-- For IP validation Bean-->
+    <bean id="ipValidation" class="com.jp.ws.interceptors.IPValidator">
+        <constructor-arg index="0">
+            <array>
+                <value>10.213.18.18</value>
+                <value>127.0.0.1</value>
+            </array>
+        </constructor-arg>
+    </bean>
+    
+    <!-- IP Interceptor-->
+    <bean id="ipValidatingInterceptor" class="com.jp.ws.interceptors.IPValidatingInterceptor">
+        <constructor-arg index="0" ref="ipValidation" />
+    </bean>
+    
     
 </beans>

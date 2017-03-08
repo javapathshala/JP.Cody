@@ -17,12 +17,22 @@
         <jaxws:properties>
             <entry key="schema-validation-enabled" value="IN" />
         </jaxws:properties>
+        <jaxws:inFaultInterceptors>
+            <ref bean="loggingInInterceptor" />
+        </jaxws:inFaultInterceptors>
         <jaxws:inInterceptors>
             <ref bean="loggingInInterceptor" />
+            <ref bean="ipValidatingInterceptor"/>
         </jaxws:inInterceptors>
+      
+        <jaxws:outFaultInterceptors>
+            <ref bean="loggingOutInterceptor" />
+        </jaxws:outFaultInterceptors>
         <jaxws:outInterceptors>
             <ref bean="loggingOutInterceptor" />
         </jaxws:outInterceptors>
+     
+       
         
         
         <!--        <jaxws:features>
