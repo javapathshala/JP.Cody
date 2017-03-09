@@ -12,6 +12,8 @@
  */
 package com.jp.ws.interceptors;
 
+import java.util.Base64;
+import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 import org.apache.cxf.interceptor.Fault;
@@ -27,10 +29,10 @@ import org.apache.cxf.phase.Phase;
  * @since 1.0
  * @version 1.0
  */
-public class HttpHeaderInterceptor extends AbstractPhaseInterceptor<Message>
+public class HttpRequestHeaderInterceptor extends AbstractPhaseInterceptor<Message>
 {
 
-    public HttpHeaderInterceptor()
+    public HttpRequestHeaderInterceptor()
     {
         super(Phase.INVOKE);
     }
@@ -39,14 +41,13 @@ public class HttpHeaderInterceptor extends AbstractPhaseInterceptor<Message>
     public void handleMessage(Message message) throws Fault
     {
         // Get request HTTP headers
-        Map<String, List<String>> headers = (Map<String, List<String>>) message.get(Message.PROTOCOL_HEADERS);
+        Map<String, List<String>> headers = (Map<String, List<String>>) message.getExchange().getInMessage().get(Message.PROTOCOL_HEADERS);
         try
         {
             List<String> token_headers = headers.get("ACCESS_TOKEN");
             if (token_headers == null || token_headers.isEmpty())
             {
                 System.out.println(" No Header information");
-                //throw new Exception("No Header information");
             }
             else
             {
@@ -72,5 +73,4 @@ public class HttpHeaderInterceptor extends AbstractPhaseInterceptor<Message>
             throw new Fault(ce);
         }
     }
-
 }

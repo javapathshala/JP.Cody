@@ -32,6 +32,7 @@
         <constructor-arg index="0" ref="ipValidation" />
     </bean>
     
-    <bean id="httpHeaderInterceptor" class="com.jp.ws.interceptors.HttpHeaderInterceptor"/>
+    <bean id="httpRequestHeaderInterceptor" class="com.jp.ws.interceptors.HttpRequestHeaderInterceptor"/>
+    <bean id="httpResponseHeaderInterceptor" class="com.jp.ws.interceptors.HttpResponseHeaderInterceptor"/>
     
 </beans>
