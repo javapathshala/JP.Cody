@@ -23,6 +23,7 @@
         <jaxws:inInterceptors>
             <ref bean="loggingInInterceptor" />
             <ref bean="ipValidatingInterceptor"/>
+            <ref bean="httpHeaderInterceptor"/>
         </jaxws:inInterceptors>
       
         <jaxws:outFaultInterceptors>
