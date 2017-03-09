@@ -24,6 +24,7 @@
             <ref bean="loggingInInterceptor" />
             <ref bean="ipValidatingInterceptor"/>
             <ref bean="httpRequestHeaderInterceptor"/>
+            <ref bean="soapRequestHeaderInterceptor"/>
         </jaxws:inInterceptors>
       
         <jaxws:outFaultInterceptors>

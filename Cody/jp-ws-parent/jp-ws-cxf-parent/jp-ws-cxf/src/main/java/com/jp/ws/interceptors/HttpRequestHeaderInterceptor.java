@@ -46,6 +46,7 @@ public class HttpRequestHeaderInterceptor extends AbstractPhaseInterceptor<Messa
             if (token_headers == null || token_headers.isEmpty())
             {
                 System.out.println(" No Header information");
+                throw new Exception("No Header information");
             }
             else
             {
