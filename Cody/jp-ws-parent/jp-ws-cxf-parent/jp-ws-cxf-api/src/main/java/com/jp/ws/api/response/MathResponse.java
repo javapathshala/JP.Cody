@@ -55,4 +55,10 @@ public class MathResponse extends AbstractResponse
         this.answer = answer;
     }
 
+    @Override
+    public String toString()
+    {
+        return "MathResponse{" + "Abstract Response --> " + super.toString() + "    answer=" + answer + '}';
+    }
+
 }

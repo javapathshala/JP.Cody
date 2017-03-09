@@ -18,6 +18,14 @@ import java.util.Properties;
 
 import com.jp.math.ws.MathEndPoint;
 import com.jp.math.ws.MathService;
+import java.net.Authenticator;
+import java.net.PasswordAuthentication;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import javax.xml.ws.BindingProvider;
+import javax.xml.ws.handler.MessageContext;
 
 /**
  * @author Dimit Chadha
@@ -47,6 +55,10 @@ public final class MathEndpointFactory
      * The property name which defines the port portion of the WSDL {@link URL}.
      */
     private static final String WSDL_PORT = "port";
+
+    private static final String USER_ID = "user";
+    private static final String PASSWORD = "password";
+    private static final String ACCESS_TOKEN = "access_token";
     /**
      * A singleton {@link MathEndpointFactory} instance used to load endpoint
      * properties and create endpoint instances.
@@ -61,6 +73,8 @@ public final class MathEndpointFactory
     // instances.
     private MathService service;
 
+    private Properties properties = new Properties();
+
     /**
      * Creates a new {@link ChroniclerEndpointFactory} instance. This
      * implementation loads the {@link #BOOTSTRAP_FILE} and constructs the
@@ -74,7 +88,7 @@ public final class MathEndpointFactory
     private MathEndpointFactory()
     {
         // Create a new properties object
-        Properties properties = new Properties();
+
         // Get the bootstrap properties file from the classpath
         InputStream input = getClass().getClassLoader().getResourceAsStream(BOOTSTRAP_FILE);
         try
@@ -84,13 +98,10 @@ public final class MathEndpointFactory
             {
                 try
                 {
-                    // Load the bootstrap properties file in to the properties
-                    // object
                     properties.load(input);
                 }
                 finally
                 {
-                    // Close the handle to the bootstrap properties file
                     input.close();
                 }
             }
@@ -111,6 +122,7 @@ public final class MathEndpointFactory
         int urlPort = Integer.parseInt(port);
         // Get the WSDL file property
         String urlFile = properties.getProperty(WSDL_FILE);
+
         try
         {
             // Construct the WSDL URL
@@ -119,7 +131,6 @@ public final class MathEndpointFactory
         catch (MalformedURLException e)
         {
             e.printStackTrace();
-            // LOG.error("Unable to form {} URL", BOOTSTRAP_FILE, e);
         }
     }
 
@@ -149,16 +160,34 @@ public final class MathEndpointFactory
      */
     private MathEndPoint createPort()
     {
+        MathEndPoint mathEndPoint = null;
         synchronized (this)
         {
             // If the service object is null
             if (this.service == null)
             {
+                //1. Http basic authentication
+                Authenticator.setDefault(new Authenticator()
+                {
+                    @Override
+                    protected PasswordAuthentication getPasswordAuthentication()
+                    {
+                        return new PasswordAuthentication(properties.getProperty(USER_ID), properties.getProperty(PASSWORD).toCharArray());
+                    }
+                });
                 // Create a new service object
                 createService();
+                mathEndPoint = service.getMathPort();
             }
+
+            //2. Added ACCESS_TOKEN to http request header
+            BindingProvider bindingProvider = (BindingProvider) mathEndPoint;
+            Map<String, Object> requestContext = bindingProvider.getRequestContext();
+            Map<String, List<String>> headers = new HashMap<>();
+            headers.put("ACCESS_TOKEN", Arrays.asList(properties.getProperty(ACCESS_TOKEN)));
+            requestContext.put(MessageContext.HTTP_REQUEST_HEADERS, headers);
             // Return a new port from the service
-            return service.getMathPort();
+            return mathEndPoint;
         }
     }
 

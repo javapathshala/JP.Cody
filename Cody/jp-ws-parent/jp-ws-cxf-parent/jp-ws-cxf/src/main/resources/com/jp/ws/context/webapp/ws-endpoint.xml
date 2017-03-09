@@ -21,18 +21,18 @@
             <ref bean="loggingInInterceptor" />
         </jaxws:inFaultInterceptors>
         <jaxws:inInterceptors>
-            <ref bean="loggingInInterceptor" />
             <ref bean="ipValidatingInterceptor"/>
             <ref bean="httpRequestHeaderInterceptor"/>
             <ref bean="soapRequestHeaderInterceptor"/>
+            <ref bean="loggingInInterceptor" />
         </jaxws:inInterceptors>
       
         <jaxws:outFaultInterceptors>
             <ref bean="loggingOutInterceptor" />
         </jaxws:outFaultInterceptors>
         <jaxws:outInterceptors>
-            <ref bean="loggingOutInterceptor" />
             <ref bean="httpResponseHeaderInterceptor"/>
+            <ref bean="loggingOutInterceptor" />
         </jaxws:outInterceptors>
      
        
