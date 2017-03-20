@@ -80,11 +80,13 @@
                     <groupId>org.apache.cxf</groupId>
                     <artifactId>cxf-java2ws-plugin</artifactId>
                     <version>${version.org.apache.cxf}</version>
+                    
                     <configuration>
                         <attachWsdl>true</attachWsdl>
                         <className>com.jp.ws.cxf.EnterpriseMathService</className>
                         <genWsdl>true</genWsdl>
                         <soap12>true</soap12>
+                        <argline>-createxsdimports</argline>
                     </configuration>
                     <dependencies>
                         <dependency>
@@ -100,8 +102,10 @@
             <plugin>
                 <groupId>org.apache.cxf</groupId>
                 <artifactId>cxf-java2ws-plugin</artifactId>
+                
                 <executions>
                     <execution>
+                       
                         <phase>process-classes</phase>
                         <goals>
                             <goal>java2ws</goal>
