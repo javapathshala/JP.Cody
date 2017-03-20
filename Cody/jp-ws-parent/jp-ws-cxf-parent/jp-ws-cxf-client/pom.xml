@@ -9,8 +9,23 @@
     <artifactId>jp-ws-client</artifactId>
     <name>CXF WS Client</name>
     <description>WS Client</description>
+    
+    <dependencies>
+        <dependency>
+            <groupId>org.apache.cxf</groupId>
+            <artifactId>cxf-rt-frontend-simple</artifactId>
+            <version>${version.org.apache.cxf}</version>        
+        </dependency>
+        <dependency>
+            <groupId>org.apache.cxf</groupId>
+            <artifactId>cxf-rt-frontend-jaxws</artifactId>
+            <version>${version.org.apache.cxf}</version>
+        </dependency>
+         
+        
+    </dependencies>
 
-   <!-- Build Settings -->
+    <!-- Build Settings -->
     <build>
         <pluginManagement>
             <plugins>

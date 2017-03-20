@@ -34,6 +34,6 @@
     
     <bean id="httpRequestHeaderInterceptor" class="com.jp.ws.interceptors.HttpRequestHeaderInterceptor"/>
     <bean id="httpResponseHeaderInterceptor" class="com.jp.ws.interceptors.HttpResponseHeaderInterceptor"/>
-      <bean id="soapRequestHeaderInterceptor" class="com.jp.ws.interceptors.SOAPRequestHeaderInterceptor"/>
+    <bean id="verifySoapRequestHeaderInterceptor" class="com.jp.ws.interceptors.VerifySOAPRequestHeaderInterceptor"/>
     
 </beans>

@@ -47,6 +47,7 @@ public class IPValidatingInterceptor extends AbstractSoapInterceptor
         {
             // Read http header to get client IP adress
             String ip = request.getRemoteAddr();
+            System.out.println("in IP");
             if (!ipValidator.isAllowed(ip))
             {
                 throw new SoapFault("Not Permitted! You don't have valid IP", Fault.FAULT_CODE_CLIENT);

@@ -32,7 +32,7 @@ public class HttpRequestHeaderInterceptor extends AbstractPhaseInterceptor<Messa
 
     public HttpRequestHeaderInterceptor()
     {
-        super(Phase.INVOKE);
+        super(Phase.PRE_INVOKE);
     }
 
     @Override

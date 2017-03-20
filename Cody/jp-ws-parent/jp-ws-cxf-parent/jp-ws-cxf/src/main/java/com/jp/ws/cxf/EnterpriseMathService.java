@@ -20,7 +20,6 @@ import com.jp.ws.api.InquiryService;
 import com.jp.ws.api.MathService;
 import com.jp.ws.api.StorageService;
 import com.jp.ws.api.response.MathResponse;
-import javax.xml.ws.soap.Addressing;
 
 /**
  * @author Dimit Chadha

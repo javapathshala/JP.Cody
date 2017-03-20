@@ -10,9 +10,8 @@
  * obtain retention orders and to prosecute the authors of any infraction.
  * www.javapathshala.com
  */
-package com.jp.ws.interceptors;
+package com.jp.ws.client;
 
-import java.net.HttpURLConnection;
 import java.util.List;
 import javax.xml.namespace.QName;
 import javax.xml.parsers.DocumentBuilder;
@@ -39,23 +38,31 @@ public class SOAPRequestHeaderInterceptor extends AbstractSoapInterceptor
 
     public SOAPRequestHeaderInterceptor()
     {
-        super(Phase.INVOKE);
+        super(Phase.PRE_LOGICAL);
     }
+
+//    public SOAPRequestHeaderInterceptor()
+//    {
+//        super(Phase.PRE_INVOKE);
+//    }
 
     @Override
     public void handleMessage(SoapMessage soapMessage) throws Fault
     {
+        
+        
         List<Header> list = soapMessage.getHeaders();
+        System.out.println(soapMessage.getVersion());
         list.forEach((headers) ->
         {
             System.out.println("Header Name -->" + headers.getName() + " = " + headers.toString());
         });
-        if (list.isEmpty() || !list.contains("user"))
-        {
-
-            System.out.println("handleMessage: Invalid username or password for user: ");
-            //return;
-        }
+//        if (list.isEmpty() || !list.contains("user"))
+//        {
+//
+//            System.out.println("handleMessage: Invalid username or password for user: ");
+//            //return;
+//        }
 
         DocumentBuilder documentBuilder = null;
         try
@@ -82,10 +89,12 @@ public class SOAPRequestHeaderInterceptor extends AbstractSoapInterceptor
         QName qnameCredentials = new QName("Secured");
         Header header = new Header(qnameCredentials, eSecure);
         soapMessage.getHeaders().add(header);
-        list.forEach((headers) ->
+        for (Header headers : soapMessage.getHeaders())
         {
             System.out.println("Header Name 2-->" + headers.getName() + " = " + headers.toString());
-        });
+        }
+ 
+      
 
     }
 }

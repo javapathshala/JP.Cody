@@ -26,6 +26,8 @@ import java.util.List;
 import java.util.Map;
 import javax.xml.ws.BindingProvider;
 import javax.xml.ws.handler.MessageContext;
+import org.apache.cxf.frontend.ClientProxy;
+import org.apache.cxf.endpoint.Client;
 
 /**
  * @author Dimit Chadha
@@ -186,6 +188,29 @@ public final class MathEndpointFactory
             Map<String, List<String>> headers = new HashMap<>();
             headers.put("ACCESS_TOKEN", Arrays.asList(properties.getProperty(ACCESS_TOKEN)));
             requestContext.put(MessageContext.HTTP_REQUEST_HEADERS, headers);
+
+            // Get the underlying Client object from the proxy object of service interface
+            Client proxy = (Client)ClientProxy.getClient(mathEndPoint);
+            proxy.getOutInterceptors().add(new SOAPRequestHeaderInterceptor());
+            // Create a list for holding all SOAP headers
+//            List<Header> headersList = new ArrayList<Header>();
+//
+//            Header testSoapHeader1;
+//            try
+//            {
+//                testSoapHeader1 = new Header(new QName("uri:singz.ws.sample", "soapheader1"), "SOAP Header Message 1", new JAXBDataBinding(String.class));
+//                Header testSoapHeader2 = new Header(new QName("uri:singz.ws.sample", "soapheader2"), "SOAP Header Message 2", new JAXBDataBinding(String.class));
+//
+//                headersList.add(testSoapHeader1);
+//                headersList.add(testSoapHeader2);
+//            }
+//            catch (JAXBException ex)
+//            {
+//                Logger.getLogger(MathEndpointFactory.class.getName()).log(Level.SEVERE, null, ex);
+//            }
+//
+//            // Add SOAP headers to the web service request
+//            proxy.getRequestContext().put(Header.HEADER_LIST, headersList);
             // Return a new port from the service
             return mathEndPoint;
         }
