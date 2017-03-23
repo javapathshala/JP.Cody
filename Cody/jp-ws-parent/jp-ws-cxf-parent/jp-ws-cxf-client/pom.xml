@@ -42,7 +42,7 @@
                         </wsdlOptions>
                     </configuration>
                 </plugin>
-                <plugin>
+                <!--                <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-pmd-plugin</artifactId>
                     <configuration>
@@ -50,7 +50,7 @@
                             <excludeRoot>${project.build.directory}/generated-sources/cxf</excludeRoot>
                         </excludeRoots>
                     </configuration>
-                </plugin>
+                </plugin>-->
             </plugins>
         </pluginManagement>
         <plugins>
@@ -73,7 +73,15 @@
                                     <type>wsdl</type>
                                     <destFileName>jp-ws-cxf.wsdl</destFileName>
                                 </artifactItem>
+<!--                                <artifactItem>
+                                    <groupId>${project.groupId}</groupId>
+                                    <artifactId>EnterpriseMathService_schema1</artifactId>
+                                    <version>${project.version}</version>
+                                    <type>xsd</type>
+                                    <destFileName>EnterpriseMathService_schema1.xsd</destFileName>
+                                </artifactItem>-->
                             </artifactItems>
+                            <!--<includes>**/*.xsd</includes>-->
                             <outputDirectory>${project.build.outputDirectory}</outputDirectory>
                         </configuration>
                     </execution>

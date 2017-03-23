@@ -86,7 +86,7 @@
                         <className>com.jp.ws.cxf.EnterpriseMathService</className>
                         <genWsdl>true</genWsdl>
                         <soap12>true</soap12>
-                        <argline>-createxsdimports</argline>
+                        <!--<argline>-createxsdimports</argline>-->
                     </configuration>
                     <dependencies>
                         <dependency>
