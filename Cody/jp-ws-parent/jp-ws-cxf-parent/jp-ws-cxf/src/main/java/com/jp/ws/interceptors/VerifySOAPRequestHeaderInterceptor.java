@@ -13,16 +13,13 @@
 package com.jp.ws.interceptors;
 
 import com.sun.org.apache.xerces.internal.dom.ElementNSImpl;
-import static java.util.Collections.list;
 import javax.xml.namespace.QName;
 import org.apache.cxf.binding.soap.SoapFault;
 import org.apache.cxf.binding.soap.SoapMessage;
 import org.apache.cxf.binding.soap.interceptor.AbstractSoapInterceptor;
 import org.apache.cxf.headers.Header;
 import org.apache.cxf.interceptor.Fault;
-import org.apache.cxf.message.Message;
 import org.apache.cxf.phase.Phase;
-import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
 
 /**

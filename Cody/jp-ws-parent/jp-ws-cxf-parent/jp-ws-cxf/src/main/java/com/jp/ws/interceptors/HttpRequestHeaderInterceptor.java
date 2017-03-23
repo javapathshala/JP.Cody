@@ -39,7 +39,7 @@ public class HttpRequestHeaderInterceptor extends AbstractPhaseInterceptor<Messa
     public void handleMessage(Message message) throws Fault
     {
         // Get request HTTP headers
-        Map<String, List<String>> headers = (Map<String, List<String>>) message.getExchange().getInMessage().get(Message.PROTOCOL_HEADERS);
+        Map<String, List<String>> headers = (Map<String, List<String>>)(message.getExchange().getInMessage().get(Message.PROTOCOL_HEADERS));
         try
         {
             List<String> token_headers = headers.get("ACCESS_TOKEN");

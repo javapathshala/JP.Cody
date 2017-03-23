@@ -41,7 +41,7 @@ public class HttpResponseHeaderInterceptor extends AbstractPhaseInterceptor<Mess
     public void handleMessage(Message message) throws Fault
     {
         // Get request HTTP headers
-        Map<String, List<String>> headers = (Map<String, List<String>>) message.getExchange().getOutMessage().get(Message.PROTOCOL_HEADERS);
+        Map<String, List<String>> headers = (Map<String, List<String>>) (message.getExchange().getOutMessage().get(Message.PROTOCOL_HEADERS));
         pushHeader(headers);
     }
 

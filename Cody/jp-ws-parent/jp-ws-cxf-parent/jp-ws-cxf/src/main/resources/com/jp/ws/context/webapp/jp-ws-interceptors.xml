@@ -16,6 +16,8 @@
     <!-- logging Interceptor that will log all received/sent messages -->
     <bean id="loggingInInterceptor" class="org.apache.cxf.interceptor.LoggingInInterceptor" parent="abstractLoggingInterceptor"/>
     <bean id="loggingOutInterceptor" class="org.apache.cxf.interceptor.LoggingOutInterceptor" parent="abstractLoggingInterceptor"/>
+        <bean id="logInterceptor" class="com.jp.ws.interceptors.LogInterceptor"/>
+    
     
     <!-- For IP validation Bean-->
     <bean id="ipValidation" class="com.jp.ws.interceptors.IPValidator">

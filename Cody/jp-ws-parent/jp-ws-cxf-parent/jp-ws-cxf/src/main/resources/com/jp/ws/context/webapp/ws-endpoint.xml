@@ -26,6 +26,7 @@
             <ref bean="httpRequestHeaderInterceptor"/>
             <ref bean="verifySoapRequestHeaderInterceptor"/>
             <ref bean="loggingInInterceptor" />
+            <ref bean="logInterceptor"/>
         </jaxws:inInterceptors>
         
         <jaxws:outFaultInterceptors>
