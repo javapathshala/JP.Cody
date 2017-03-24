@@ -37,5 +37,5 @@
     <bean id="httpRequestHeaderInterceptor" class="com.jp.ws.interceptors.HttpRequestHeaderInterceptor"/>
     <bean id="httpResponseHeaderInterceptor" class="com.jp.ws.interceptors.HttpResponseHeaderInterceptor"/>
     <bean id="verifySoapRequestHeaderInterceptor" class="com.jp.ws.interceptors.VerifySOAPRequestHeaderInterceptor"/>
-    
+    <!--<bean id="gZipInterceptor" class="org.apache.cxf.transport.common.gzip.GZIPOutInterceptor" />-->
 </beans>

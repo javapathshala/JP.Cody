@@ -26,7 +26,7 @@
             <ref bean="httpRequestHeaderInterceptor"/>
             <ref bean="verifySoapRequestHeaderInterceptor"/>
             <ref bean="loggingInInterceptor" />
-            <ref bean="logInterceptor"/>
+            <!--<ref bean="logInterceptor"/>-->
         </jaxws:inInterceptors>
         
         <jaxws:outFaultInterceptors>
@@ -36,10 +36,11 @@
             <!--<ref bean="soapRequestHeaderInterceptor"/>-->
             <ref bean="httpResponseHeaderInterceptor"/>
             <ref bean="loggingOutInterceptor" />
+ <!--<ref bean="gZipInterceptor" />-->
+
         </jaxws:outInterceptors>
      
-       
-        
+   
         
         <!--        <jaxws:features>
             <wsa:addressing  addressingRequired="true" allowDuplicates="true"/>
