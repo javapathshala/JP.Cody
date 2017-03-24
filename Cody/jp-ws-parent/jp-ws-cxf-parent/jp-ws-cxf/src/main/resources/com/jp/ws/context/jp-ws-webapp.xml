@@ -10,9 +10,14 @@
         
     <!--SOAP Interceptors-->
     <import resource="classpath:com/jp/ws/context/webapp/jp-ws-interceptors.xml" />
+    
+    <!--WSS4J Security-->
+    <import resource="classpath:com/jp/ws/context/webapp/jp-ws-wss4j.xml" />
 	
     <!--SOAP WS-->
     <import resource="classpath:com/jp/ws/context/webapp/ws-endpoint.xml" />
+    
+    
 
     <!--REST WS-->
     <!--<import resource="classpath:com/jp/ws/context/webapp/rs-endpoint.xml" />-->

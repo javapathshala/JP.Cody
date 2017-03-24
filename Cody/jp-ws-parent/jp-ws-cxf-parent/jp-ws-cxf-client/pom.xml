@@ -11,6 +11,7 @@
     <description>WS Client</description>
     
     <dependencies>
+        <!-- For CXF client - basically for adding interceptors-->
         <dependency>
             <groupId>org.apache.cxf</groupId>
             <artifactId>cxf-rt-frontend-simple</artifactId>
@@ -22,6 +23,12 @@
             <version>${version.org.apache.cxf}</version>
         </dependency>
          
+         <!-- Security - ws-* - WSS4j -->
+        <dependency>
+            <groupId>org.apache.cxf</groupId>
+            <artifactId>cxf-rt-ws-security</artifactId>
+            <version>${version.org.apache.cxf}</version>
+        </dependency>
         
     </dependencies>
 

@@ -28,6 +28,9 @@ import javax.xml.ws.BindingProvider;
 import javax.xml.ws.handler.MessageContext;
 import org.apache.cxf.frontend.ClientProxy;
 import org.apache.cxf.endpoint.Client;
+import org.apache.cxf.ws.security.wss4j.WSS4JOutInterceptor;
+import org.apache.wss4j.dom.WSConstants;
+import org.apache.wss4j.dom.handler.WSHandlerConstants;
 
 /**
  * @author Dimit Chadha
@@ -190,28 +193,18 @@ public final class MathEndpointFactory
             requestContext.put(MessageContext.HTTP_REQUEST_HEADERS, headers);
 
             // Get the underlying Client object from the proxy object of service interface
-            Client proxy = (Client)ClientProxy.getClient(mathEndPoint);
+            Client proxy = (Client) ClientProxy.getClient(mathEndPoint);
+            //adding soap header via interceptor
             proxy.getOutInterceptors().add(new SOAPRequestHeaderInterceptor());
-            // Create a list for holding all SOAP headers
-//            List<Header> headersList = new ArrayList<Header>();
-//
-//            Header testSoapHeader1;
-//            try
-//            {
-//                testSoapHeader1 = new Header(new QName("uri:singz.ws.sample", "soapheader1"), "SOAP Header Message 1", new JAXBDataBinding(String.class));
-//                Header testSoapHeader2 = new Header(new QName("uri:singz.ws.sample", "soapheader2"), "SOAP Header Message 2", new JAXBDataBinding(String.class));
-//
-//                headersList.add(testSoapHeader1);
-//                headersList.add(testSoapHeader2);
-//            }
-//            catch (JAXBException ex)
-//            {
-//                Logger.getLogger(MathEndpointFactory.class.getName()).log(Level.SEVERE, null, ex);
-//            }
-//
-//            // Add SOAP headers to the web service request
-//            proxy.getRequestContext().put(Header.HEADER_LIST, headersList);
-            // Return a new port from the service
+
+            //Client side - adding security (WS security feature)
+            Map<String, Object> secureProp = new HashMap();
+            secureProp.put(WSHandlerConstants.ACTION, WSHandlerConstants.USERNAME_TOKEN);
+            secureProp.put(WSHandlerConstants.USER, "jp");
+            secureProp.put(WSHandlerConstants.PASSWORD_TYPE, WSConstants.PW_DIGEST);
+            secureProp.put(WSHandlerConstants.PW_CALLBACK_CLASS, ClientPasswordCallback.class.getName());
+            WSS4JOutInterceptor wssOut = new WSS4JOutInterceptor(secureProp);
+            proxy.getOutInterceptors().add(wssOut);
             return mathEndPoint;
         }
     }

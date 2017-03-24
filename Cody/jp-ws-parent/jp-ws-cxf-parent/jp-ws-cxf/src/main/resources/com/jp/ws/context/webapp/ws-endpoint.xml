@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-       xmlns:jaxws="http://cxf.apache.org/jaxws" xmlns:soap="http://cxf.apache.org/bindings/soap"
+       xmlns:jaxws="http://cxf.apache.org/jaxws" 
+       xmlns:soap="http://cxf.apache.org/bindings/soap"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:cxf="http://cxf.apache.org/core" 
        xmlns:wsa="http://cxf.apache.org/ws/addressing"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
                            http://cxf.apache.org/jaxws http://cxf.apache.org/schemas/jaxws.xsd
-                           http://cxf.apache.org/bindings/soap http://cxf.apache.org/schemas/configuration/soap.xsd">
+                           http://cxf.apache.org/bindings/soap http://cxf.apache.org/schemas/configuration/soap.xsd
+                           http://cxf.apache.org/core http://cxf.apache.org/schemas/core.xsd">
 
     <jaxws:endpoint address="/ws/Math" id="wsMathEndpoint">
         <jaxws:binding>
@@ -16,6 +19,7 @@
         </jaxws:implementor>
         <jaxws:properties>
             <entry key="schema-validation-enabled" value="IN" />
+            <entry key="ws-security.callback-handler" value-ref="myPasswordCallback"/>
         </jaxws:properties>
         <jaxws:inFaultInterceptors>
             <ref bean="loggingInInterceptor" />
@@ -26,6 +30,7 @@
             <ref bean="httpRequestHeaderInterceptor"/>
             <ref bean="verifySoapRequestHeaderInterceptor"/>
             <ref bean="loggingInInterceptor" />
+            <ref bean="inbound-security" />
             <!--<ref bean="logInterceptor"/>-->
         </jaxws:inInterceptors>
         
@@ -36,32 +41,7 @@
             <!--<ref bean="soapRequestHeaderInterceptor"/>-->
             <ref bean="httpResponseHeaderInterceptor"/>
             <ref bean="loggingOutInterceptor" />
- <!--<ref bean="gZipInterceptor" />-->
-
+            <!--<ref bean="gZipInterceptor" />-->
         </jaxws:outInterceptors>
-     
-   
-        
-        <!--        <jaxws:features>
-            <wsa:addressing  addressingRequired="true" allowDuplicates="true"/>
-        </jaxws:features>-->
-        <!--        <jaxws:inInterceptors>
-            <ref bean="mapAggregator"/>
-            <ref bean="mapCodec"/>
-        </jaxws:inInterceptors>
-        <jaxws:outInterceptors>
-            <ref bean="mapAggregator"/>
-            <ref bean="mapCodec"/>
-        </jaxws:outInterceptors>
-        <jaxws:inFaultInterceptors>
-            <ref bean="mapAggregator"/>
-            <ref bean="mapCodec"/>
-        </jaxws:inFaultInterceptors>
-        <jaxws:outFaultInterceptors>
-            <ref bean="mapAggregator"/>
-            <ref bean="mapCodec"/>
-        </jaxws:outFaultInterceptors>-->
-        
-       
     </jaxws:endpoint>
 </beans>
