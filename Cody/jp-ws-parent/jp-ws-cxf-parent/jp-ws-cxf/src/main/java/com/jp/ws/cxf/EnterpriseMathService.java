@@ -22,6 +22,7 @@ import com.jp.ws.api.StorageService;
 import com.jp.ws.api.exceptions.ServiceException;
 import com.jp.ws.api.response.MathResponse;
 import javax.xml.ws.Action;
+import javax.xml.ws.FaultAction;
 import javax.xml.ws.soap.Addressing;
 
 /**
@@ -59,7 +60,10 @@ public class EnterpriseMathService implements MathService
 
     // Inquiry Methods
     @Override
-    @Action(input = "http://jp.com/math/ws/input",output ="http://jp.com/math/ws/output")
+    @Action(input = "http://jp.com/math/ws/input", output = "http://jp.com/math/ws/output", fault =
+    {
+        @FaultAction(className = ServiceException.class, value = "")
+    })
     public MathResponse summation(@WebParam(name = "numberList") List<Integer> numbers) throws ServiceException
     {
         return inquiryDelegate.summation(numbers);
