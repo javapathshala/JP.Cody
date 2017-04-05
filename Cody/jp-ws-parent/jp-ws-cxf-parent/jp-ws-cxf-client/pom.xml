@@ -22,8 +22,12 @@
             <artifactId>cxf-rt-frontend-jaxws</artifactId>
             <version>${version.org.apache.cxf}</version>
         </dependency>
-         
-         <!-- Security - ws-* - WSS4j -->
+        <dependency>
+            <groupId>org.bouncycastle</groupId>
+            <artifactId>bcprov-jdk16</artifactId>
+            <version>1.45</version>
+        </dependency>
+        <!-- Security - ws-* - WSS4j -->
         <dependency>
             <groupId>org.apache.cxf</groupId>
             <artifactId>cxf-rt-ws-security</artifactId>
@@ -80,7 +84,7 @@
                                     <type>wsdl</type>
                                     <destFileName>jp-ws-cxf.wsdl</destFileName>
                                 </artifactItem>
-<!--                                <artifactItem>
+                                <!--                                <artifactItem>
                                     <groupId>${project.groupId}</groupId>
                                     <artifactId>EnterpriseMathService_schema1</artifactId>
                                     <version>${project.version}</version>

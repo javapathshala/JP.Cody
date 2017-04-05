@@ -21,11 +21,14 @@ import com.jp.ws.api.MathService;
 import com.jp.ws.api.StorageService;
 import com.jp.ws.api.exceptions.ServiceException;
 import com.jp.ws.api.response.MathResponse;
+import javax.xml.ws.Action;
+import javax.xml.ws.soap.Addressing;
 
 /**
  * @author Dimit Chadha
  */
 @WebService(serviceName = "MathService", portName = "MathPort", name = "MathEndPoint", targetNamespace = "http://jp.com/math/ws")
+@Addressing
 //@Addressing(enabled = true, required = true)
 public class EnterpriseMathService implements MathService
 {
@@ -56,6 +59,7 @@ public class EnterpriseMathService implements MathService
 
     // Inquiry Methods
     @Override
+    @Action(input = "http://jp.com/math/ws/input",output ="http://jp.com/math/ws/output")
     public MathResponse summation(@WebParam(name = "numberList") List<Integer> numbers) throws ServiceException
     {
         return inquiryDelegate.summation(numbers);
