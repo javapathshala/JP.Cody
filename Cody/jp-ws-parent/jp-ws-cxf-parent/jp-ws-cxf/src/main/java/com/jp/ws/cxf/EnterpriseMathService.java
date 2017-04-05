@@ -19,6 +19,7 @@ import javax.jws.WebService;
 import com.jp.ws.api.InquiryService;
 import com.jp.ws.api.MathService;
 import com.jp.ws.api.StorageService;
+import com.jp.ws.api.exceptions.ServiceException;
 import com.jp.ws.api.response.MathResponse;
 
 /**
@@ -55,7 +56,7 @@ public class EnterpriseMathService implements MathService
 
     // Inquiry Methods
     @Override
-    public MathResponse summation(@WebParam(name = "numberList") List<Integer> numbers)
+    public MathResponse summation(@WebParam(name = "numberList") List<Integer> numbers) throws ServiceException
     {
         return inquiryDelegate.summation(numbers);
     }

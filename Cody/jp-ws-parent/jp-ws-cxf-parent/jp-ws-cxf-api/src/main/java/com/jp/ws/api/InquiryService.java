@@ -10,6 +10,7 @@
  */
 package com.jp.ws.api;
 
+import com.jp.ws.api.exceptions.ServiceException;
 import java.util.List;
 
 import com.jp.ws.api.response.MathResponse;
@@ -17,8 +18,9 @@ import com.jp.ws.api.response.MathResponse;
 /**
  * @author Dimit Chadha
  */
-public interface InquiryService {
+public interface InquiryService
+{
 
-	MathResponse summation(List<Integer> numbers);
+    MathResponse summation(List<Integer> numbers) throws ServiceException;
 
 }

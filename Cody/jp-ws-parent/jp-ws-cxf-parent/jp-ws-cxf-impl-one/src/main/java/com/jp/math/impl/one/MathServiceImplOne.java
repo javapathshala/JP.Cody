@@ -15,6 +15,8 @@ import com.jp.efficacy.ws.ResponseStatus;
 import java.util.List;
 
 import com.jp.ws.api.MathService;
+import com.jp.ws.api.exceptions.ServiceException;
+import com.jp.ws.api.exceptions.ServiceExceptionDetails;
 import com.jp.ws.api.response.MathResponse;
 
 /**
@@ -24,11 +26,20 @@ public class MathServiceImplOne implements MathService
 {
 
     @Override
-    public MathResponse summation(List<Integer> numbers)
+    public MathResponse summation(List<Integer> numbers) throws ServiceException
     {
         int sum = 0;
         for (Integer num : numbers)
         {
+            if (num == 0)
+            {
+                ServiceExceptionDetails ServiceExceptionDetailsArray[] = new ServiceExceptionDetails[1];
+                ServiceExceptionDetails serviceExceptionDetails = new ServiceExceptionDetails();
+                serviceExceptionDetails.setFaultCode("100");
+                serviceExceptionDetails.setFaultMessage("Number should not be Zero");
+                ServiceExceptionDetailsArray[0] = serviceExceptionDetails;
+                throw new ServiceException("Fault Message", ServiceExceptionDetailsArray);
+            }
             sum += num;
         }
         return new MathResponse(ResponseStatus.SUCCESS, ResponseReason.OK, "Sum is " + sum, String.valueOf(sum));

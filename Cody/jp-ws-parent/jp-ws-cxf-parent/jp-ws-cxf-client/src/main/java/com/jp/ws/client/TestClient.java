@@ -14,6 +14,8 @@ package com.jp.ws.client;
 
 import com.jp.math.ws.MathEndPoint;
 import com.jp.math.ws.MathResponse;
+import com.jp.math.ws.ServiceExceptionDetails;
+import com.jp.math.ws.ServiceException_Exception;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -39,11 +41,21 @@ public class TestClient
         MathEndPoint endPoint = MathEndpointFactory.create();
 
         List<Integer> numberList = new ArrayList();
-        numberList.add(12);
+        numberList.add(67);
         numberList.add(13);
-
-        MathResponse response = endPoint.summation(numberList);
-        System.out.println(response.toString());
+        try
+        {
+            MathResponse response = endPoint.summation(numberList);
+            System.out.println(response.getAnswer());
+        }
+        catch (ServiceException_Exception e)
+        {
+            List<ServiceExceptionDetails> faultDetails = e.getFaultInfo().getFaultDetails();
+            for (ServiceExceptionDetails serviceExceptionDetails : faultDetails)
+            {
+                System.out.println("Fault code = " + serviceExceptionDetails.getFaultCode() + "\nFault message = "
+                        + serviceExceptionDetails.getFaultMessage());
+            }
+        }
     }
-
 }

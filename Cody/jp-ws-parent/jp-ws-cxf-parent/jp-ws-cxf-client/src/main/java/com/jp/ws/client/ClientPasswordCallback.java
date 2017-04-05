@@ -41,7 +41,7 @@ public class ClientPasswordCallback implements CallbackHandler
             {
                 // you can source the username and password from
                 // other sources like login context, LDAP, DB etc
-                pc.setIdentifier("jpuser2");
+                pc.setIdentifier("jpuser");
                 pc.setPassword("jppass");
             }
         }
