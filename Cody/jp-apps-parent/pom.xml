@@ -17,6 +17,8 @@
         <module>jp-cluster</module>
         <module>jp-nosql</module>
         <module>jp-memcache</module>
+        <module>jp-twitter</module>
+        <module>jp-facebook</module>
     </modules>
     <dependencies>
         <dependency>
