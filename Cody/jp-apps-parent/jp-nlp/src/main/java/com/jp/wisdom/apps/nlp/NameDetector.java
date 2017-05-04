@@ -12,7 +12,6 @@
  */
 package com.jp.wisdom.apps.nlp;
 
-import java.io.FileInputStream;
 import java.io.InputStream;
 import opennlp.tools.namefind.NameFinderME;
 import opennlp.tools.namefind.TokenNameFinderModel;
@@ -41,7 +40,7 @@ public class NameDetector
     private void run() throws Exception
     {
         String sentence2 = "Jack London is the author of what novel?";
-        String sentence = "Hi. How are you? This is Pankaj Sharma";
+        String sentence = "Jack London is the author of what novel? Hi. How are you? This is Lester Graham";
 
         //1. convert sentence into tokens
         InputStream modelInToken = getClass().getResourceAsStream("/en-token.bin");
