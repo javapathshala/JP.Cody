@@ -19,6 +19,7 @@
         <module>jp-memcache</module>
         <module>jp-twitter</module>
         <module>jp-facebook</module>
+        <module>jp-nlp</module>
     </modules>
     <dependencies>
         <dependency>
