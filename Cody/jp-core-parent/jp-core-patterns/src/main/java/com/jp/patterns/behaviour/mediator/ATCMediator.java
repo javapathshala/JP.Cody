@@ -20,6 +20,7 @@ public class ATCMediator implements ATCTower {
 	public boolean land;
 
 	
+        @Override
 	public boolean isLandingOk() {
 		return land;
 	}
