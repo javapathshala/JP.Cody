@@ -18,7 +18,7 @@ import java.util.regex.Pattern;
  */
 public class PhoneExpression {
 
-	private static final String expression = "^\\(?(\\d{3})\\)?[- ]?(\\d{3})[- ]?(\\d{0,4})$";
+	private static final String expression = "(?:(?:\\+?1\\s*(?:[.-]\\s*)?)?(?:\\(\\s*([2-9]1[02-9]|[2-9][02-8]1|[2-9][02-8][02-9])\\s*\\)|([2-9]1[02-9]|[2-9][02-8]1|[2-9][02-8][02-9]))\\s*(?:[.-]\\s*)?)?([2-9]1[02-9]|[2-9][02-9]1|[2-9][02-9]{2})\\s*(?:[.-]\\s*)?([0-9]{4})(?:\\s*(?:#|x\\.?|ext\\.?|extension)\\s*(\\d+))?";
 
 	/**
 	 * @param args
@@ -26,7 +26,7 @@ public class PhoneExpression {
 	public static void main(String[] args) {
 		Pattern pattern = Pattern.compile(expression);
 
-		String phoneNumber = "972480-5594";
+		String phoneNumber = "12345678901x1234";
 		Matcher matcher = pattern.matcher(phoneNumber);
 
 		if (matcher.matches()) {

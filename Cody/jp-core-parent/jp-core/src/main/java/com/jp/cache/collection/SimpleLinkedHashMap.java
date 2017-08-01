@@ -32,12 +32,12 @@ public class SimpleLinkedHashMap {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		Map<String, String> simpleMap = new HashMap<String, String>();
+		Map<String, String> simpleMap = new HashMap();
 		simpleMap.put("Key-3", "value-3");
 		simpleMap.put("Key-1", "value-1");
 		simpleMap.put("Key-2", "value-2");
 		simpleMap.put("Key-4", "value-4");
-		System.out.println(simpleMap);
+		System.out.println("simpleMap " + simpleMap);
 
 		simpleMap = null;
 		Map<String, String> simpleLink = new LinkedHashMap<String, String>(10, 0.75f, false);
@@ -46,7 +46,7 @@ public class SimpleLinkedHashMap {
 		simpleLink.put("Key-5", "value-5");
 		simpleLink.put("Key-3", "value-3");
 		simpleLink.put("Key-1", "value-1");
-		System.out.println(simpleLink);
+		System.out.println(" simpleLink " +simpleLink);
 
 		// Get a set of the entries
 		Set<Entry<String, String>> entrySet = simpleLink.entrySet();

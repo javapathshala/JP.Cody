@@ -42,7 +42,7 @@ public class LRUCache<K, V> {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		LRUCache<String, String> lrucache = new LRUCache<String, String>(2);
+		LRUCache<String, String> lrucache = new LRUCache(4);
 
 		// add to cache
 		lrucache.put("1", "One");
