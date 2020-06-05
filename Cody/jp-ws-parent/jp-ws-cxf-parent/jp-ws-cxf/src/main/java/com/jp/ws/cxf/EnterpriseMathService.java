@@ -29,8 +29,8 @@ import javax.xml.ws.soap.Addressing;
  * @author Dimit Chadha
  */
 @WebService(serviceName = "MathService", portName = "MathPort", name = "MathEndPoint", targetNamespace = "http://jp.com/math/ws")
-@Addressing
-//@Addressing(enabled = true, required = true)
+//@Addressing
+@Addressing(enabled = true, required = true)
 public class EnterpriseMathService implements MathService
 {
 

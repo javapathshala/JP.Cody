@@ -1,0 +1,6 @@
+com/jp/wisdom/apps/nlp/NameDetector.class
+com/jp/wisdom/apps/nlp/NounDetector.class
+com/jp/wisdom/apps/nlp/TokenDetector.class
+com/jp/wisdom/apps/nlp/OpenNLPUtil.class
+com/jp/wisdom/apps/nlp/AllDetector.class
+com/jp/wisdom/apps/nlp/SentenceDetector.class

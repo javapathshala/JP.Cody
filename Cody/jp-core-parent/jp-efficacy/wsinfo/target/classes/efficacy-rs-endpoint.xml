@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:jaxrs="http://cxf.apache.org/jaxrs"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+                           http://cxf.apache.org/jaxrs http://cxf.apache.org/schemas/jaxrs.xsd">
+
+    <jaxrs:server address="/rs" id="rsWsInfoEndPoint">
+        <jaxrs:serviceBeans>
+            <ref bean="wsInfo" />
+            <ref bean="wsDownload" />
+        </jaxrs:serviceBeans>
+        <jaxrs:providers>
+            <bean class="com.fasterxml.jackson.jaxrs.json.JacksonJaxbJsonProvider" />
+            <bean class="org.apache.cxf.jaxrs.model.wadl.WadlGenerator">
+                <property name="linkJsonToXmlSchema" value="true" />
+            </bean>
+        </jaxrs:providers>
+    </jaxrs:server>
+   
+</beans>

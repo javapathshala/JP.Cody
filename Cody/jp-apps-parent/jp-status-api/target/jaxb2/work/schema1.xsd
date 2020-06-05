@@ -3,6 +3,16 @@
 
   <xs:element name="application" type="tns:application"/>
 
+  <xs:complexType name="aspect">
+    <xs:complexContent>
+      <xs:extension base="tns:abstractStatusElement">
+        <xs:sequence>
+          <xs:element name="message" type="xs:string" minOccurs="0"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
   <xs:complexType name="abstractStatusElement" abstract="true">
     <xs:sequence/>
     <xs:attribute name="name" type="xs:string" use="required"/>
@@ -37,22 +47,12 @@
     </xs:complexContent>
   </xs:complexType>
 
-  <xs:complexType name="aspect">
-    <xs:complexContent>
-      <xs:extension base="tns:abstractStatusElement">
-        <xs:sequence>
-          <xs:element name="message" type="xs:string" minOccurs="0"/>
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-
   <xs:simpleType name="statusCode">
     <xs:restriction base="xs:string">
-      <xs:enumeration value="FATAL"/>
       <xs:enumeration value="OK"/>
-      <xs:enumeration value="ERROR"/>
+      <xs:enumeration value="FATAL"/>
       <xs:enumeration value="WARN"/>
+      <xs:enumeration value="ERROR"/>
     </xs:restriction>
   </xs:simpleType>
 </xs:schema>

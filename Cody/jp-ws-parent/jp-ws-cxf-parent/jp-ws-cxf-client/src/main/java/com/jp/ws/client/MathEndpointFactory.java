@@ -177,7 +177,8 @@ public final class MathEndpointFactory
                     @Override
                     protected PasswordAuthentication getPasswordAuthentication()
                     {
-                        return new PasswordAuthentication(properties.getProperty(USER_ID), properties.getProperty(PASSWORD).toCharArray());
+                        PasswordAuthentication aa= new PasswordAuthentication(properties.getProperty(USER_ID), properties.getProperty(PASSWORD).toCharArray());
+                        return aa;
                     }
                 });
                 // Create a new service object

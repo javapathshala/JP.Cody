@@ -12,7 +12,8 @@
  */
 package com.jp.ws.interceptors;
 
-import com.sun.org.apache.xerces.internal.dom.ElementNSImpl;
+//import com.sun.org.apache.xerces.internal.dom.ElementNSImpl;
+//import com.sun.org.apache.xerces.internal.dom.ElementNSImpl;
 import javax.xml.namespace.QName;
 import org.apache.cxf.binding.soap.SoapFault;
 import org.apache.cxf.binding.soap.SoapMessage;
@@ -20,6 +21,7 @@ import org.apache.cxf.binding.soap.interceptor.AbstractSoapInterceptor;
 import org.apache.cxf.headers.Header;
 import org.apache.cxf.interceptor.Fault;
 import org.apache.cxf.phase.Phase;
+import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
 
 /**
@@ -48,7 +50,7 @@ public class VerifySOAPRequestHeaderInterceptor extends AbstractSoapInterceptor
         }
         else
         {
-            ElementNSImpl elementNSImpl = (ElementNSImpl) sec.getObject();
+            Element elementNSImpl = (Element) sec.getObject();
             // obtain all Nodes tagged 'user' or 'password'
             NodeList userIdNode = elementNSImpl.getElementsByTagNameNS("*", "user");
             NodeList passwordNode = elementNSImpl.getElementsByTagNameNS("*", "password");

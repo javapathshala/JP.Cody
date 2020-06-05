@@ -23,15 +23,14 @@
         </jaxws:properties>
         <jaxws:inFaultInterceptors>
             <ref bean="loggingInInterceptor" />
-        </jaxws:inFaultInterceptors>
-        <jaxws:inInterceptors>
-            <!--<ref bean="soapRequestHeaderInterceptor"/>-->
-            <!--<ref bean="ipValidatingInterceptor"/>-->
+        </jaxws:inFaultInterceptors><!--
+-->        <jaxws:inInterceptors>
+            <ref bean="ipValidatingInterceptor"/>
             <ref bean="httpRequestHeaderInterceptor"/>
             <ref bean="verifySoapRequestHeaderInterceptor"/>
             <ref bean="loggingInInterceptor" />
             <ref bean="inbound-security" />
-            <!--<ref bean="logInterceptor"/>-->
+            <ref bean="logInterceptor"/>
         </jaxws:inInterceptors>
         
         <jaxws:outFaultInterceptors>

@@ -28,28 +28,23 @@ import org.apache.cxf.transport.http.AbstractHTTPDestination;
  * @since 1.0
  * @version 1.0
  */
-public class IPValidatingInterceptor extends AbstractSoapInterceptor
-{
+public class IPValidatingInterceptor extends AbstractSoapInterceptor {
 
     private IPValidator ipValidator;
 
-    public IPValidatingInterceptor(IPValidator ipValidator)
-    {
+    public IPValidatingInterceptor(IPValidator ipValidator) {
         super(Phase.RECEIVE);
         this.ipValidator = ipValidator;
     }
 
     @Override
-    public void handleMessage(SoapMessage message) throws Fault
-    {
+    public void handleMessage(SoapMessage message) throws Fault {
         HttpServletRequest request = (HttpServletRequest) message.get(AbstractHTTPDestination.HTTP_REQUEST);
-        if (null != request)
-        {
+        if (null != request) {
             // Read http header to get client IP adress
             String ip = request.getRemoteAddr();
-            System.out.println("in IP");
-            if (!ipValidator.isAllowed(ip))
-            {
+            System.out.println("Current IP - " + ip);
+            if (!ipValidator.isAllowed(ip)) {
                 throw new SoapFault("Not Permitted! You don't have valid IP", Fault.FAULT_CODE_CLIENT);
             }
         }

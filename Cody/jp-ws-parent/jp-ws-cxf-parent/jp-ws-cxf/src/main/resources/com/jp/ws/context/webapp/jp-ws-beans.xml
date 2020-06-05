@@ -4,7 +4,7 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <!-- Hazel Cast -->
-    <bean class="org.springframework.core.io.ClassPathResource" id="hazelcastConfigResource">
+<!--    <bean class="org.springframework.core.io.ClassPathResource" id="hazelcastConfigResource">
         <constructor-arg value="#{servletContext.contextPath}-cache.xml" />
     </bean>
 
@@ -16,21 +16,21 @@
     <bean class="com.hazelcast.core.Hazelcast" factory-method="newHazelcastInstance"
           id="hazelcast" destroy-method="shutdown">
         <constructor-arg ref="hazelcastConfig" />
-    </bean>
+    </bean>-->
 
     <bean class="com.jp.math.impl.one.MathServiceImplOne" id="inquiryDelegate" />
 
-    <bean class="com.jp.math.impl.two.MathServiceImplTwo" id="storageDelegate">
+<!--    <bean class="com.jp.math.impl.two.MathServiceImplTwo" id="storageDelegate">
         <property name="hazelDelegate" ref="hazelDelegate" />
     </bean>
 
     <bean class="com.jp.math.impl.two.HazelcastMathService" id="hazelDelegate">
         <property name="hazelcastInstance" ref="hazelcast" />
-    </bean>
+    </bean>-->
 
     <bean class="com.jp.ws.cxf.EnterpriseMathService" id="mathService">
         <property name="inquiryDelegate" ref="inquiryDelegate" />
-        <property name="storageDelegate" ref="storageDelegate" />
+<!--        <property name="storageDelegate" ref="storageDelegate" />-->
     </bean>
     
     

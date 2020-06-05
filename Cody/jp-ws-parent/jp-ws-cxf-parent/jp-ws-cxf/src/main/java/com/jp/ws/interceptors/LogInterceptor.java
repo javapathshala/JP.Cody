@@ -125,7 +125,7 @@ public class LogInterceptor extends AbstractLoggingInterceptor
 
                 message.setContent(InputStream.class, bos.getInputStream());
 
-                writePayload(buffer.getPayload(), bos, encoding, ct);
+                writePayload(buffer.getPayload(), bos, encoding, ct,true);
 
                 bos.close();
             }

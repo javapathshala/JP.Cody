@@ -11,7 +11,7 @@
     <name>Apps Parent</name>
     <description>Apps Parent</description>
     <modules>
-        <module>jp-jtapi</module>
+        <!--<module>jp-jtapi</module>-->
         <module>jp-status-api</module>
         <module>jp-gui</module>
         <module>jp-cluster</module>

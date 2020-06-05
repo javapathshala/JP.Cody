@@ -6,7 +6,7 @@
         <join>
             <multicast enabled="false" />
             <tcp-ip enabled="true">
-                <member>10.213.18.18</member>
+                <member>192.168.7.17</member>
             </tcp-ip>
         </join>
         <port auto-increment="false">22305</port>
