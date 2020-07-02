@@ -20,6 +20,7 @@ import com.jp.ws.api.InquiryService;
 import com.jp.ws.api.MathService;
 import com.jp.ws.api.StorageService;
 import com.jp.ws.api.exceptions.ServiceException;
+import com.jp.ws.api.request.NumberRequest;
 import com.jp.ws.api.response.MathResponse;
 import javax.xml.ws.Action;
 import javax.xml.ws.FaultAction;
@@ -30,7 +31,7 @@ import javax.xml.ws.soap.Addressing;
  */
 @WebService(serviceName = "MathService", portName = "MathPort", name = "MathEndPoint", targetNamespace = "http://jp.com/math/ws")
 //@Addressing
-@Addressing(enabled = true, required = true)
+//@Addressing(enabled = true, required = true)
 public class EnterpriseMathService implements MathService
 {
 
@@ -64,9 +65,11 @@ public class EnterpriseMathService implements MathService
     {
         @FaultAction(className = ServiceException.class, value = "")
     })
-    public MathResponse summation(@WebParam(name = "numberList") List<Integer> numbers) throws ServiceException
+//    public MathResponse summation(@WebParam(name = "numberList") List<Integer> numbers) throws ServiceException
+    public MathResponse summation(@WebParam(name = "numberRequest") NumberRequest numberRequest) throws ServiceException
+
     {
-        return inquiryDelegate.summation(numbers);
+        return inquiryDelegate.summation(numberRequest);
     }
 
     @Override

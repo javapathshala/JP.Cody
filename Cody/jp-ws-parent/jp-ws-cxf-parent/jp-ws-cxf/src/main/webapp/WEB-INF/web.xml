@@ -23,7 +23,7 @@
     </servlet-mapping>
     
     <!-- This section introduces BASIC HTTP/HTTPS authentication to Web service -->
-    <security-role>
+<!--    <security-role>
         <description>Web Service Consumer</description>
         <role-name>ws_role</role-name>
     </security-role>
@@ -32,11 +32,11 @@
         <web-resource-collection>
             <web-resource-name>Operator Roles Security</web-resource-name>
             <url-pattern>/svc/*</url-pattern>
-        </web-resource-collection>
+        </web-resource-collection>-->
 
-        <auth-constraint>
+        <!--<auth-constraint>-->
             <!-- Define this role name in tomcat -->
-            <role-name>ws_role</role-name>
+<!--            <role-name>ws_role</role-name>
         </auth-constraint>
         <user-data-constraint>
             <transport-guarantee>NONE</transport-guarantee>
@@ -46,11 +46,11 @@
     <login-config>
         <auth-method>BASIC</auth-method>
         <realm-name>default</realm-name>
-    </login-config>
+    </login-config>-->
     <!-- Authentication Ends -->
     
     <!-- Welcome Page-->
-<!--    <welcome-file-list>
+    <!--    <welcome-file-list>
         <welcome-file>/svc/*</welcome-file>
     </welcome-file-list>-->
     

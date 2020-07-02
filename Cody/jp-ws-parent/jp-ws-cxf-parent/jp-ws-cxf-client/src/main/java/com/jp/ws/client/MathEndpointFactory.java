@@ -172,36 +172,36 @@ public final class MathEndpointFactory
             if (this.service == null)
             {
                 //1. Http basic authentication
-                Authenticator.setDefault(new Authenticator()
-                {
-                    @Override
-                    protected PasswordAuthentication getPasswordAuthentication()
-                    {
-                        PasswordAuthentication aa= new PasswordAuthentication(properties.getProperty(USER_ID), properties.getProperty(PASSWORD).toCharArray());
-                        return aa;
-                    }
-                });
+//                Authenticator.setDefault(new Authenticator()
+//                {
+//                    @Override
+//                    protected PasswordAuthentication getPasswordAuthentication()
+//                    {
+//                        PasswordAuthentication aa= new PasswordAuthentication(properties.getProperty(USER_ID), properties.getProperty(PASSWORD).toCharArray());
+//                        return aa;
+//                    }
+//                });
                 // Create a new service object
                 createService();
                 mathEndPoint = service.getMathPort();
             }
 
             //2. Added ACCESS_TOKEN to http request header
-            BindingProvider bindingProvider = (BindingProvider) mathEndPoint;
-            Map<String, Object> requestContext = bindingProvider.getRequestContext();
-            Map<String, List<String>> headers = new HashMap<>();
-            headers.put("ACCESS_TOKEN", Arrays.asList(properties.getProperty(ACCESS_TOKEN)));
-            requestContext.put(MessageContext.HTTP_REQUEST_HEADERS, headers);
+//            BindingProvider bindingProvider = (BindingProvider) mathEndPoint;
+//            Map<String, Object> requestContext = bindingProvider.getRequestContext();
+//            Map<String, List<String>> headers = new HashMap<>();
+//            headers.put("ACCESS_TOKEN", Arrays.asList(properties.getProperty(ACCESS_TOKEN)));
+//            requestContext.put(MessageContext.HTTP_REQUEST_HEADERS, headers);
 
-            // Get the underlying Client object from the proxy object of service interface
+//             Get the underlying Client object from the proxy object of service interface
             Client proxy = (Client) ClientProxy.getClient(mathEndPoint);
-            //adding soap header via interceptor
-            proxy.getOutInterceptors().add(new SOAPRequestHeaderInterceptor());
+//            //adding soap header via interceptor
+//            proxy.getOutInterceptors().add(new SOAPRequestHeaderInterceptor());
 
             //Client side - adding security (WS security feature)
             Map<String, Object> secureProp = new HashMap();
             secureProp.put(WSHandlerConstants.ACTION, WSHandlerConstants.USERNAME_TOKEN);
-            secureProp.put(WSHandlerConstants.USER, "jp");
+            secureProp.put(WSHandlerConstants.USER, "jpuser");
             secureProp.put(WSHandlerConstants.PASSWORD_TYPE, WSConstants.PW_DIGEST);
             secureProp.put(WSHandlerConstants.PW_CALLBACK_CLASS, ClientPasswordCallback.class.getName());
             WSS4JOutInterceptor wssOut = new WSS4JOutInterceptor(secureProp);

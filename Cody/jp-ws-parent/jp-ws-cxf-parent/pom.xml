@@ -12,7 +12,7 @@
     <modules>
         <module>jp-ws-cxf-api</module>
         <module>jp-ws-cxf-impl-one</module>
-        <module>jp-ws-cxf-impl-two</module>
+        <!--<module>jp-ws-cxf-impl-two</module>-->
         <module>jp-ws-cxf</module>
         <module>jp-ws-cxf-client</module>
     </modules>

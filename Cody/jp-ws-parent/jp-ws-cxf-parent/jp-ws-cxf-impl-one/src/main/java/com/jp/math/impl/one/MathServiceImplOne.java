@@ -17,48 +17,56 @@ import java.util.List;
 import com.jp.ws.api.MathService;
 import com.jp.ws.api.exceptions.ServiceException;
 import com.jp.ws.api.exceptions.ServiceExceptionDetails;
+import com.jp.ws.api.request.NumberRequest;
 import com.jp.ws.api.response.MathResponse;
+import java.math.BigDecimal;
+import java.util.Date;
 
 /**
  * @author Dimit Chadha
  */
-public class MathServiceImplOne implements MathService
-{
+public class MathServiceImplOne implements MathService {
 
     @Override
-    public MathResponse summation(List<Integer> numbers) throws ServiceException
-    {
-        int sum = 0;
-        for (Integer num : numbers)
-        {
-            if (num == 0)
-            {
-                ServiceExceptionDetails ServiceExceptionDetailsArray[] = new ServiceExceptionDetails[1];
-                ServiceExceptionDetails serviceExceptionDetails = new ServiceExceptionDetails();
-                serviceExceptionDetails.setFaultCode("100");
-                serviceExceptionDetails.setFaultMessage("Number should not be Zero");
-                ServiceExceptionDetailsArray[0] = serviceExceptionDetails;
-                throw new ServiceException("Fault Message", ServiceExceptionDetailsArray);
-            }
-            sum += num;
+//    public MathResponse summation(List<Integer> numbers) throws ServiceException
+    public MathResponse summation(NumberRequest numberRequest) throws ServiceException {
+        int n1 = numberRequest.getNumberOne();
+        int n2 = numberRequest.getNumberTwo();
+        Date date = numberRequest.getDate();
+
+//        int sum = 0;
+//        for (Integer num : numbers)
+//        {
+//            if (num == 0)
+        if (n1 == 0 || n2 == 0) {
+            ServiceExceptionDetails ServiceExceptionDetailsArray[] = new ServiceExceptionDetails[1];
+            ServiceExceptionDetails serviceExceptionDetails = new ServiceExceptionDetails();
+            serviceExceptionDetails.setFaultCode("100");
+            serviceExceptionDetails.setFaultMessage("Number should not be Zero");
+            ServiceExceptionDetailsArray[0] = serviceExceptionDetails;
+            throw new ServiceException("Fault Message", ServiceExceptionDetailsArray);
         }
-        return new MathResponse(ResponseStatus.SUCCESS, ResponseReason.OK, "Sum is " + sum, String.valueOf(sum));
+//            sum += num;
+        int answer = n1 + n2;
+        double answerd = numberRequest.getNum3d() + numberRequest.getNum4d();
+        BigDecimal answerb = numberRequest.getNum5b().add(numberRequest.getNum6b());
+        return new MathResponse(answer, answerd, answerb, ResponseStatus.SUCCESS, ResponseReason.OK);
+//        }
+//        return new MathResponse(ResponseStatus.SUCCESS, ResponseReason.OK, "Sum is " + sum, String.valueOf(sum));
     }
 
     @Override
-    public MathResponse multiple(List<Integer> numbers)
-    {
+    public MathResponse multiple(List<Integer> numbers) {
         int mul = 1;
-        for (Integer num : numbers)
-        {
+        for (Integer num : numbers) {
             mul *= num;
         }
-        return new MathResponse(ResponseStatus.SUCCESS, ResponseReason.OK, mul + "");
+        return  null;
+//            return new MathResponse(ResponseStatus.SUCCESS, ResponseReason.OK, mul + "");
     }
 
     @Override
-    public void record(String party)
-    {
+    public void record(String party) {
         System.out.println("Party name : " + party);
     }
 

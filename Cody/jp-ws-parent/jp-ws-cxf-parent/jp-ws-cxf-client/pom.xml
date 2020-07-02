@@ -47,6 +47,11 @@
                     <configuration>
                         <wsdlOptions>
                             <wsdlOption>
+                                <bindingFiles>
+
+                                    <bindingFile>${basedir}/src/main/resources/wsdl/bindings.xml</bindingFile>
+
+                                </bindingFiles>
                                 <wsdl>${project.build.outputDirectory}/jp-ws-cxf.wsdl</wsdl>
                                 <wsdlLocation>classpath:jp-ws-cxf.wsdl</wsdlLocation>
                             </wsdlOption>

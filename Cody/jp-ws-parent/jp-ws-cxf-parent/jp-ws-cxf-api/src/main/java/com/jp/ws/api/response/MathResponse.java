@@ -13,6 +13,7 @@ package com.jp.ws.api.response;
 import com.jp.efficacy.ws.AbstractResponse;
 import com.jp.efficacy.ws.ResponseReason;
 import com.jp.efficacy.ws.ResponseStatus;
+import java.math.BigDecimal;
 
 /**
  * @author Dimit Chadha
@@ -20,45 +21,69 @@ import com.jp.efficacy.ws.ResponseStatus;
 public class MathResponse extends AbstractResponse
 {
 
-    private String answer;
+    private int answer;
+    private double answerd;
+    private BigDecimal answerb;
 
     public MathResponse()
     {
         super();
     }
 
-    public MathResponse(ResponseStatus status, ResponseReason reason, String answer)
-    {
-        this(status, reason, null, answer);
+    public MathResponse(int answer, double answerd, BigDecimal answerb, ResponseStatus responseStatus, ResponseReason responseReason) {
+        super(responseStatus, responseReason);
+        this.answer = answer;
+        this.answerd = answerd;
+        this.answerb = answerb;
     }
 
-    public MathResponse(ResponseStatus status, ResponseReason reason, String message, String answer)
+    
+    
+//    public MathResponse(ResponseStatus status, ResponseReason reason, String answer)
+//    {
+//        this(status, reason, null, answer);
+//    }
+
+//    public MathResponse(ResponseStatus status, ResponseReason reason, String message, String answer)
+//    {
+//        super(status, reason, message);
+//        this.answer = answer;
+//    }
+
+    
+
+    public int getAnswer()
     {
-        super(status, reason, message);
+        return answer;
+    }
+
+    public void setAnswer(int answer) {
         this.answer = answer;
+    }
+
+    public double getAnswerd() {
+        return answerd;
+    }
+
+    public void setAnswerd(double answerd) {
+        this.answerd = answerd;
+    }
+
+    public BigDecimal getAnswerb() {
+        return answerb;
     }
 
     /**
      * @return the answer
      */
-    public String getAnswer()
-    {
-        return answer;
-    }
-
-    /**
-     * @param answer
-     *               the answer to set
-     */
-    public void setAnswer(String answer)
-    {
-        this.answer = answer;
+    public void setAnswerb(BigDecimal answerb) {    
+        this.answerb = answerb;
     }
 
     @Override
-    public String toString()
-    {
-        return "MathResponse{" + "Abstract Response --> " + super.toString() + "    answer=" + answer + '}';
+    public String toString() {
+        return "MathResponse{" + "answer=" + answer + ", answerd=" + answerd + ", answerb=" + answerb + '}';
     }
 
+    
 }

@@ -26,8 +26,8 @@
         </jaxws:inFaultInterceptors><!--
 -->        <jaxws:inInterceptors>
             <ref bean="ipValidatingInterceptor"/>
-            <ref bean="httpRequestHeaderInterceptor"/>
-            <ref bean="verifySoapRequestHeaderInterceptor"/>
+<!--            <ref bean="httpRequestHeaderInterceptor"/>-->
+            <!--<ref bean="verifySoapRequestHeaderInterceptor"/>-->
             <ref bean="loggingInInterceptor" />
             <ref bean="inbound-security" />
             <ref bean="logInterceptor"/>
@@ -37,8 +37,7 @@
             <ref bean="loggingOutInterceptor" />
         </jaxws:outFaultInterceptors>
         <jaxws:outInterceptors>
-            <!--<ref bean="soapRequestHeaderInterceptor"/>-->
-            <ref bean="httpResponseHeaderInterceptor"/>
+            <!--<ref bean="httpResponseHeaderInterceptor"/>--> <!--Only logic exits, still need to add it to header -->
             <ref bean="loggingOutInterceptor" />
             <!--<ref bean="gZipInterceptor" />-->
         </jaxws:outInterceptors>
